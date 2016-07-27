@@ -1,0 +1,44 @@
+{{define "work"}}
+	{{ block "_header" . }}{{ end }}
+
+		{{ $name := .Category.Name }}
+		<article id="{{ .Category.Name }}">
+		{{ template "_menu" . }}
+		<section id="content">
+			<h2>
+				<div>{{ .Category.Title }}</div>
+			</h2>
+			<nav>
+			<ul class="list-unstyled">
+				{{ range $work := .Category.Works }}
+				<li><a href="#{{ $work.Dir }}"></a></li>
+				{{ end }}
+			</ul>
+			</nav>
+
+			{{ range $work := .Category.Works }}
+			<section class="{{.Dir}}">
+			<h3>{{ .Ename }} - {{.Jname}}</h3>
+			<nav>
+				<ul class="list-unstyled">
+				{{ range $jpg := .JpgSlice }}
+				<li><a href="#{{ $jpg }}">Photo {{ $jpg }}</a></li>
+				{{ end }}
+				</ul>
+			</nav>
+			<div>
+				<ul>
+				{{ range $jpg := .JpgSlice }}
+				<li><a href="#"><img src="/assets/img/works/{{ $name }}/{{ $work.Dir }}/{{ $jpg }}.jpg"></a></li>
+				{{ end }}
+				</ul>
+			</div>
+			<p></p>
+			</section>
+			{{ end }}
+
+		</section>
+		</article>
+
+	{{ block "_footer" . }}{{ end }}
+{{end}}

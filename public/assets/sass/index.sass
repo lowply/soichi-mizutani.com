@@ -1,0 +1,71 @@
+body#index
+  header
+    h1
+      text-align: center
+      margin: 0 auto
+  width: 970px
+  article
+    min-height: 700px
+    >div
+      a
+        display: block
+        height: 0
+        padding-top: 470px
+        overflow: hidden
+        background: url(/assets/img/index/header.jpg) no-repeat
+    >section
+      margin-top: 30px
+      div
+        height: 20px
+        color: #999
+        margin: 10px auto
+      ul
+        margin: 0
+        padding: 0
+        overflow: hidden
+        li
+          width: 70px
+          float: left
+          background: #000
+          margin-right: 30px
+          &:last-child
+            margin: 0
+          a
+            display: block
+            width: 70px
+            padding-top: 70px
+            height: 0
+            overflow: hidden
+            background-size: cover
+            opacity: 0.6
+    >ul
+      li
+        margin: 0 auto
+        a
+          display: block
+          height: 0
+          padding-top: 30px
+          overflow: hidden
+          background: url(/assets/img/main.svg) no-repeat
+          background-size: 1600px 2000px
+    >ul.contact
+      margin: 100px auto 0
+      li
+        width: 360px
+        @for $i from 1 through 3
+          &:nth-child(#{$i}) a
+            background-position: -400px 0px - 30 * $i - 240
+          &:nth-child(#{$i}) a:hover
+            background-position: -760px 0px - 30 * $i - 240
+    >ul.pages
+      overflow: hidden
+      margin: 40px auto 100px
+      width: 360px
+      li
+        float: left
+        width: 120px
+        @for $i from 1 through 3
+          &:nth-child(#{$i}) a
+            background-position: -400px 0px - 30 * $i - 120
+          &:nth-child(#{$i}) a:hover
+            background-position: -520px 0px - 30 * $i - 120

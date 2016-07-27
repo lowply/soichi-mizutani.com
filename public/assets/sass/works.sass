@@ -1,0 +1,146 @@
+// Content Section
+// ---------------------------------------------------------------------------------
+
+article
+  section#content
+    width: 600px
+    float: left
+    min-height: 600px
+    h2
+      margin: 0 0 20px
+      background: url(/assets/img/main.svg) no-repeat
+      background-size: 1600px 2000px
+      overflow: hidden
+      div
+        width: 190px
+        height: 0
+        padding-top: 24px
+        overflow: hidden
+        float: right
+        background: url(/assets/img/main.svg) no-repeat
+        background-size: 1600px 2000px
+        background-position: -400px 0
+
+@each $category in $categories
+  $index: index($categories, $category) - 1
+  article##{$category} section#content h2
+    background-position: 0px 0px - 24 * $index - 420
+
+// Content - Navigation
+// ---------------------------------------------------------------------------------
+
+article
+  section#content
+    > nav
+      height: 112px
+      ul
+        overflow: hidden
+        padding: 0
+        li
+          width: 51px
+          height: 51px
+          float: left
+          margin: 0 10px 10px 0
+          &:nth-child(10n)
+            margin-right: 0
+          a
+            display: block
+            width: 51px
+            height: 0
+            padding-top: 51px
+            overflow: hidden
+            background-size: cover
+            background-position: center center
+    section
+      margin-top: 30px
+      width: 600px
+      overflow: hidden
+      display: none
+      h3
+        width: 190px
+        height: 0
+        padding-top: 60px
+        overflow: hidden
+        float: left
+        margin: 0
+        background-image: url(/assets/img/main.svg)
+        background-size: 1600px 2000px
+      nav
+        float: right
+        ul
+          padding: 0
+          overflow: hidden
+          li
+            width: 60px
+            float: left
+            margin-right: 10px
+            background: #000
+            &:last-child
+              margin: 0
+            a
+              display: block
+              width: 60px
+              height: 0
+              padding-top: 60px
+              overflow: hidden
+              background-size: cover
+              background-position: center center
+              opacity: 0.2
+      div
+        width: 600px
+        clear: both
+        overflow: hidden
+        padding-top: 20px
+        ul
+          padding: 0
+          overflow: hidden
+          position: relative
+          li
+            list-style: none
+            width: 600px
+            float: left
+            text-align: center
+  
+  $dy: 60
+  $offsety: 770
+
+  @each $work in $interior-shop
+    $index: index($interior-shop, $work) - 1
+    &#interior-shop section#content section.#{$work} h3
+      background-position: 0px 0px - $dy * $index - $offsety
+
+  @each $work in $interior-restaurant
+    $index: index($interior-restaurant, $work) - 1
+    &#interior-restaurant section#content section.#{$work} h3
+      background-position: -190px 0px - $dy * $index - $offsety
+
+  @each $work in $interior-bar
+    $index: index($interior-bar, $work) - 1
+    &#interior-bar section#content section.#{$work} h3
+      background-position: -380px 0px - $dy * $index - $offsety
+
+  @each $work in $interior-gallery
+    $index: index($interior-gallery, $work) - 1
+    &#interior-gallery section#content section.#{$work} h3
+      background-position: -570px 0px - $dy * $index - $offsety
+
+  @each $work in $interior-office
+    $index: index($interior-office, $work) - 1
+    &#interior-office section#content section.#{$work} h3
+      background-position: -760px 0px - $dy * $index - $offsety
+
+  @each $work in $interior-medical
+    $index: index($interior-medical, $work) - 1
+    &#interior-medical section#content section.#{$work} h3
+      background-position: -950px 0px - $dy * $index - $offsety
+
+  @each $work in $architecture-house
+    $index: index($architecture-house, $work) - 1
+    &#architecture-house section#content section.#{$work} h3
+      background-position: -1140px 0px - $dy * $index - $offsety
+
+  @each $work in $other-complex
+    $index: index($other-complex, $work) - 1
+    &#other-complex section#content section.#{$work} h3
+      background-position: -1330px 0px - $dy * $index - $offsety
+
