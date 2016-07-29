@@ -1,7 +1,10 @@
 default: run
 
+gae:
+	goapp serve
+
 run:
-	go run *.go
+	go run main.go pages.go json.go template.go standalone.go 
 
 build:
 	go build -o bin/main

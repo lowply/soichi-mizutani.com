@@ -4,12 +4,26 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/engine/standard"
+	"github.com/rs/cors"
 )
 
 type Page struct {
 	Title    string
 	Slag     string
 	Category Category
+}
+
+func init() {
+	g := e.Group("/")
+	g.Use(standard.WrapMiddleware(cors.Default().Handler))
+
+	g.Get("", Index)
+	g.Get("works/", NotFound)
+	g.Get("works/:cat/", Works)
+	g.Get("bio/", Bio)
+	g.Get("company/", Company)
+	g.Get("links/", Links)
 }
 
 func NotFound(c echo.Context) error {
