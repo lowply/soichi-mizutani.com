@@ -13,6 +13,8 @@ handlers:
 
 skip_files:
 - ^(vendor/.*)
+- ^(src/.*)
+- ^(node_modules/.*)
 - ^(public/assets/config.rb)
 - ^(public/assets/sass/.*)
 - ^(public/assets/.sass-cache/.*)

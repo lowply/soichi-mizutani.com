@@ -1,0 +1,36 @@
+{
+  "name": "soichi-mizutani.com",
+  "version": "1.0.0",
+  "description": "soichi-mizutani.com",
+  "main": "index.js",
+  "dependencies": {
+    "basscss": "^8.0.1",
+    "node-sass": "^3.8.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "bootstrap": "^4.0.0-alpha.3",
+    "bootstrap-sass": "^3.3.7",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jquery": "^3.1.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowply/soichi-mizutani.com.git"
+  },
+  "author": "Sho Mizutani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lowply/soichi-mizutani.com/issues"
+  },
+  "homepage": "https://github.com/lowply/soichi-mizutani.com#readme"
+}

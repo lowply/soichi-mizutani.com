@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 /* Variables
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -5,7 +7,7 @@ var debug = true;
 var page = '';
 var category = '';
 var work = '';
-var defaultOpacity = 0.2;
+var defaultOpacity = 0.3;
 var slideDuration = 300;
 var fadeDuration = 100;
 var photoAreaWidth = 600;
@@ -155,10 +157,6 @@ $(function(){
 		return false;
 	});
 	
-	
-	// For LEGACY browsers notion
-	$('div#note').html('お使いのブラウザでは表示が崩れる可能性があります。<br>下記のいずれかのブラウザの最新版をダウンロードしてご利用ください。<br><a href="http://www.google.co.jp/chrome/">Google Chrome</a>, <a href="http://mozilla.jp/firefox/">Mozilla Firefox</a>, <a href="http://www.apple.com/jp/safari/">Apple Safari</a>, <a href="http://www.microsoft.com/japan/windows/products/winfamily/ie/function/default.mspx">Internet Explorer</a>')
-
 	/* For Works
 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	if(page == 'works'){
@@ -263,20 +261,12 @@ $(function(){
 			
 			$(this).hover(
 			function(){
-				$(this).css('opacity','1');
 				$('body#index article section div').html($(this).html());
 			},
 			function(){
-				$(this).css('opacity','0.6');
 				$('body#index article section div').html('&nbsp;');
 			})
 		});
-		
-		// for IE8 nth-child problem
-		if(ua.indexOf('msie 8') != -1){
-			$('body#index article section ul li:nth-child(4n)').css('margin-right','0')
-			$('body#index article nav#global dl:last-child').css('margin','0')
-		}
 	}
 
 	/* For Company
@@ -288,13 +278,16 @@ $(function(){
 	
 	if(page == 'bio'){
 		$('article section#content div#lang a').click(function(){
-			$('article section#content div#' + lang).hide();
-			$('article section#content div#lang a[href=#' + lang + ']').css('font-weight','normal');
-			
-			lang = $(this).attr('href').replace('#','');
-			
-			$('article section#content div#' + lang).show();
-			$('article section#content div#lang a[href=#' + lang + ']').css('font-weight','bold');
+			var lang = $(this).attr('href').replace('#','');
+			$('article section#content div#lang a').css('font-weight','normal');
+			if (lang == "j"){
+				$('article section#content div#j').show();
+				$('article section#content div#e').hide();
+			}else{
+				$('article section#content div#e').show();
+				$('article section#content div#j').hide();
+			}
+			$(this).css('font-weight','bold');
 			
 			return false;
 		})

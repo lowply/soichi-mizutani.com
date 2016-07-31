@@ -20,12 +20,10 @@ body#index
         color: #999
         margin: 10px auto
       ul
-        margin: 0
         padding: 0
-        overflow: hidden
+        display: flex
         li
           width: 70px
-          float: left
           background: #000
           margin-right: 30px
           &:last-child
@@ -38,34 +36,17 @@ body#index
             overflow: hidden
             background-size: cover
             opacity: 0.6
+            &:hover
+              opacity: 1
     >ul
       li
-        margin: 0 auto
+        text-align: center
         a
-          display: block
-          height: 0
-          padding-top: 30px
-          overflow: hidden
-          background: url(/assets/img/main.svg) no-repeat
-          background-size: 1600px 2000px
     >ul.contact
       margin: 100px auto 0
-      li
-        width: 360px
-        @for $i from 1 through 3
-          &:nth-child(#{$i}) a
-            background-position: -400px 0px - 30 * $i - 240
-          &:nth-child(#{$i}) a:hover
-            background-position: -760px 0px - 30 * $i - 240
     >ul.pages
-      overflow: hidden
+      display: flex
+      justify-content: center
       margin: 40px auto 100px
-      width: 360px
       li
-        float: left
         width: 120px
-        @for $i from 1 through 3
-          &:nth-child(#{$i}) a
-            background-position: -400px 0px - 30 * $i - 120
-          &:nth-child(#{$i}) a:hover
-            background-position: -520px 0px - 30 * $i - 120

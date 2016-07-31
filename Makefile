@@ -1,16 +1,27 @@
 default: run
 
-gae:
-	goapp serve
+install:
+	glide install
+	npm install
 
 run:
-	go run main.go pages.go json.go template.go standalone.go 
+	goapp serve -port 8888
 
 build:
+	NODE_ENV=production ./node_modules/.bin/webpack --optimize-minimize
+
+build-dev:
+	./node_modules/.bin/webpack
+
+watch:
+	./node_modules/.bin/webpack -w
+
+go-standalone:
+	go run main.go pages.go json.go template.go standalone.go
+
+go-build:
 	go build -o bin/main
 
-build-linux:
+go-build-linux:
 	GOOS=linux GOARCH=amd64 go build -o bin/main
 	
-deps:
-	glide install
