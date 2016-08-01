@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import anime from 'animejs';
 
 /* Variables
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -10,7 +11,7 @@ var work = '';
 var defaultOpacity = 0.3;
 var slideDuration = 300;
 var fadeDuration = 100;
-var photoAreaWidth = 600;
+var photoAreaWidth = 700;
 var currentPhotos = {};
 var currentSection = '';
 var lang = 'j';
@@ -36,7 +37,7 @@ function getCategory(){
 
 function changePhotos(clicked){	
 	// how much photo moves to left/right
-	var innerWidth = 600;
+	var innerWidth = 700;
 		
 	// get the section which includes clicked anchor element
 	var section = clicked.parent().parent().parent().parent();
@@ -63,7 +64,14 @@ function changePhotos(clicked){
 	clicked.css('opacity','1');
 	
 	// move the target photo container
-	target.animate({'left' : -(photoNumber-1)*innerWidth + 'px'}, slideDuration, 'easeInOutQuart');	
+	var delta = -(photoNumber-1)*innerWidth
+	var myAnimation = anime({
+		targets: [target[0]],
+		translateX: delta,
+		duration: 300,
+		easing: 'easeInOutQuart',
+		elasticity: 0,
+	});
 	
 	// clicked thumb anchor obj is set to the current thumb
 	currentPhotos[id] = clicked;
@@ -117,8 +125,6 @@ function init_works(){
 	// setSectionHeaderBg
 	$('section#content section h3').each(function(){
 		var id = $(this).parent().attr('class');
-		//$(this).css('background-image','url(/assets/img/works/' + category + '/' + id + '/title.png)');
-		// $(this).css('background-image','url(/assets/img/main.svg)');
 	});
 	
 	// clickEachPhotoThumbs
@@ -130,10 +136,10 @@ function init_works(){
 	
 	// showFirstSection
 	if(work){
-		var anchorName = $('section#content > nav ul li a[href=#' + work + ']');
+		var anchorName = $('section#content > nav ul li a[href="#' + work + '"]');
 	}else{
 		var sectionName = $('section#content section:first').attr('class');
-		var anchorName = $('section#content > nav ul li a[href=#' + sectionName + ']');
+		var anchorName = $('section#content > nav ul li a[href="#' + sectionName + '"]');
 	}
 	changeSections(anchorName);
 	
@@ -150,58 +156,21 @@ $(function(){
 
 	getCategory();
 	
-	// Disable anchors to closed content
-	var disabledObjects = $('a[href*=graphic],a[href*=fixture],a[href*=furniture]', 'article nav#global dl dd');
-	// disabledObjects.css('opacity','0.2'); ==> moved to css
-	disabledObjects.click(function(){
-		return false;
-	});
-	
 	/* For Works
 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	if(page == 'works'){
 		init_works();
 		
 		// main nav hover
-		$("nav dl dd a").each(function(i){
-			category = $(this).attr("href").replace("/works/","").replace("/","")
-			var categories = "article#" + category + " section#content > nav ul li a"
-			$(categories).each(function(j){
-				$(this).hover(
-					function(){
-						var px = i * -190
-						var py = j * -60 - 1370
-						$('article section#content h2 div').css('background-position', px + 'px ' + py + 'px');
-					},
-					function(){
-						$('article section#content h2 div').css('background-position','0 -400px');
-					}
-				)
+		$('article section#content > nav ul li').each(function(i){
+			$(this).hover(function(){
+				var ename = $("h3 div.e", $('article section#content section')[i]).html()
+				$("article section#content h2 span").html(" / " + ename)
+			},function(){
+				$("article section#content h2 span").html("")
 			})
 		})
 
-
-		// for (var i = 0; i < $(ga).length; i++) {
-		// 	py = i * -60 - 1370
-		// 	$(ga, 1).hover(
-		// 		function(){
-		// 			$('article section#content h2 div').css('background-position','0 ' + py + 'px');
-		// 		},
-		// 		function(){
-		// 			$('article section#content h2 div').css('background-position','-400px 0');
-		// 		}
-		// 	);
-		// }
-		// $(ga).hover(
-		// 	function(){
-		// 		console.log($(this).attr("href"))
-		// 		$('article section#content h2 div').css('background-position','0 -1370px');
-		// 	},
-		// 	function(){
-		// 		$('article section#content h2 div').css('background-position','-400px 0');
-		// 	}
-		// );
-		
 		// sub nav hover
 		$('article section#content section nav ul li a').hover(
 			function(){
@@ -220,7 +189,7 @@ $(function(){
 			var section = $(this).parents('section section');
 			var pn = currentPhotos[section.attr('class')];
 			var tg = pn.parent().next().children('a');
-			var firstAnchor = $('nav ul li a[href=#1]',section);
+			var firstAnchor = $('nav ul li a[href="#1"]',section);
 			
 			this.blur();
 			if(tg.html()){
@@ -244,9 +213,6 @@ $(function(){
 			changePhotos($(this));
 			return false;
 		});
-		
-		// for IE8 last-child problem
-		$('article section#content section nav ul li:last-child').css('margin','0');
 		
 	};
 	

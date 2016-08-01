@@ -10,6 +10,9 @@ run:
 build:
 	NODE_ENV=production ./node_modules/.bin/webpack --optimize-minimize
 
+deploy:build
+	goapp deploy
+
 build-dev:
 	./node_modules/.bin/webpack
 

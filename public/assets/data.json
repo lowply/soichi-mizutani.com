@@ -53,6 +53,13 @@
 			"Title"	:	"Interior Design / Restaurant",
 			"Works"	: [
 				{
+					"Ename"		:	"Senshu",
+					"Jname"		:	"千秋",
+					"Dir"		:	"senshu",
+					"Caption"	:	"",
+					"Jpg"		:	8
+				},
+				{
 					"Ename"		:	"Tesate Menteng",
 					"Jname"		:	"テサテ メンテン",
 					"Dir"		:	"tesate-menteng",
@@ -128,6 +135,13 @@
 			"Name"	:	"interior-bar",
 			"Title"	:	"Interior Design / Bar",
 			"Works"	: [
+				{
+					"Ename"		:	"Motion Blue Jakarta",
+					"Jname"		:	"モーションブルー ジャカルタ",
+					"Dir"		:	"mbjakarta",
+					"Caption"	:	"",
+					"Jpg"		:	7
+				},
 				{
 					"Ename"		:	"Bar Yuki",
 					"Jname"		:	"バー 雪",
@@ -231,6 +245,13 @@
 			"Title"	:	"Interior Design / Medical",
 			"Works"	: [
 				{
+					"Ename"		:	"Ito Dental Clinic",
+					"Jname"		:	"伊藤デンタルクリニック",
+					"Dir"		:	"ito",
+					"Caption"	:	"",
+					"Jpg"		:	9
+				},
+				{
 					"Ename"		:	"Maruhashi Dental Clinic",
 					"Jname"		:	"丸橋歯科",
 					"Dir"		:	"maruhashi",
@@ -264,6 +285,13 @@
 			"Name"	:	"architecture-house",
 			"Title"	:	"Architecture / House",
 			"Works"	: [
+				{
+					"Ename"		:	"Ito Dental Clinic",
+					"Jname"		:	"伊藤デンタルクリニック",
+					"Dir"		:	"ito_ex",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
 				{
 					"Ename"		:	"Murakami House Ex",
 					"Jname"		:	"村上邸 外観",

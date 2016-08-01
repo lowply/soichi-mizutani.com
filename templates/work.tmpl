@@ -4,40 +4,41 @@
 		{{ $name := .Category.Name }}
 		<article id="{{ .Category.Name }}">
 		{{ template "_menu" . }}
-		<section id="content">
-			<h2>
-				<div>{{ .Category.Title }}</div>
-			</h2>
-			<nav>
-			<ul class="list-unstyled">
-				{{ range $work := .Category.Works }}
-				<li><a href="#{{ $work.Dir }}"></a></li>
-				{{ end }}
-			</ul>
-			</nav>
-
-			{{ range $work := .Category.Works }}
-			<section class="{{.Dir}}">
-			<h3>{{ .Ename }} - {{.Jname}}</h3>
-			<nav>
+			<section id="content">
+				<h2>{{ .Category.Title }}<span></span></h2>
+				<nav>
 				<ul class="list-unstyled">
-				{{ range $jpg := .JpgSlice }}
-				<li><a href="#{{ $jpg }}">Photo {{ $jpg }}</a></li>
-				{{ end }}
+					{{ range $work := .Category.Works }}
+					<li><a href="#{{ $work.Dir }}"></a></li>
+					{{ end }}
 				</ul>
-			</nav>
-			<div>
-				<ul>
-				{{ range $jpg := .JpgSlice }}
-				<li><a href="#"><img src="/assets/img/works/{{ $name }}/{{ $work.Dir }}/{{ $jpg }}.jpg"></a></li>
-				{{ end }}
-				</ul>
-			</div>
-			<p></p>
-			</section>
-			{{ end }}
+				</nav>
 
-		</section>
+				{{ range $work := .Category.Works }}
+				<section class="{{.Dir}}">
+				<h3>
+					<div class="j">{{ .Jname }}</div>
+					<div class="e">{{ .Ename }}</div>
+				</h3>
+				<nav>
+					<ul class="list-unstyled">
+					{{ range $jpg := .JpgSlice }}
+					<li><a href="#{{ $jpg }}">Photo {{ $jpg }}</a></li>
+					{{ end }}
+					</ul>
+				</nav>
+				<div>
+					<ul class="list-unstyled">
+					{{ range $jpg := .JpgSlice }}
+					<li><a href="#"><img src="/assets/img/works/{{ $name }}/{{ $work.Dir }}/{{ $jpg }}.jpg"></a></li>
+					{{ end }}
+					</ul>
+				</div>
+				<p></p>
+				</section>
+				{{ end }}
+
+			</section>
 		</article>
 
 	{{ block "_bottom" . }}{{ end }}
