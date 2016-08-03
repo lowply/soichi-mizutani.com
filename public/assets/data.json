@@ -37,7 +37,7 @@
 					"Jname"		:	"アルテマイスター",
 					"Dir"		:	"altemeister",
 					"Caption"	:	"",
-					"Jpg"		:	5
+					"Jpg"		:	9
 				},
 				{
 					"Ename"		:	"Renaude Pellegrino",
@@ -278,6 +278,13 @@
 					"Dir"		:	"iijima",
 					"Caption"	:	"",
 					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Kuragano Dental Clinic",
+					"Jname"		:	"倉賀野歯科",
+					"Dir"		:	"kuragano",
+					"Caption"	:	"",
+					"Jpg"		:	7
 				}
 			]
 		},
