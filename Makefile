@@ -11,6 +11,7 @@ build:
 	NODE_ENV=production ./node_modules/.bin/webpack --optimize-minimize
 
 deploy:build
+	find . -name .DS_Store -delete
 	goapp deploy
 
 build-dev:
