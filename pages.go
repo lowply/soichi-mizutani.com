@@ -35,6 +35,7 @@ func Index(c echo.Context) error {
 		Title: "Welcome",
 		Slag:  "index",
 	}
+	c.Response().Header().Add("Cache-Control", "max-age=86400, public")
 	return c.Render(http.StatusOK, "index", p)
 }
 
@@ -43,6 +44,7 @@ func Bio(c echo.Context) error {
 		Title: "Biography",
 		Slag:  "bio",
 	}
+	c.Response().Header().Add("Cache-Control", "max-age=86400, public")
 	return c.Render(http.StatusOK, "bio", p)
 }
 
@@ -51,6 +53,7 @@ func Company(c echo.Context) error {
 		Title: "Company",
 		Slag:  "company",
 	}
+	c.Response().Header().Add("Cache-Control", "max-age=86400, public")
 	return c.Render(http.StatusOK, "company", p)
 }
 
@@ -59,6 +62,7 @@ func Links(c echo.Context) error {
 		Title: "Links",
 		Slag:  "links",
 	}
+	c.Response().Header().Add("Cache-Control", "max-age=86400, public")
 	return c.Render(http.StatusOK, "links", p)
 }
 
@@ -68,5 +72,6 @@ func Works(c echo.Context) error {
 		Slag:     "works",
 		Category: readCategory(c.Param("cat")),
 	}
+	c.Response().Header().Add("Cache-Control", "max-age=86400, public")
 	return c.Render(http.StatusOK, "work", p)
 }
