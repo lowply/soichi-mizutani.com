@@ -1,31 +1,18 @@
 default: run
 
 install:
-	dep ensure
+	dep ensure -update
 	npm install
 
-run:
-	goapp serve -port 8888
-
 build:
-	NODE_ENV=production ./node_modules/.bin/webpack --optimize-minimize
-
-deploy:build
-	find . -name .DS_Store -delete
-	goapp deploy
-
-build-dev:
-	./node_modules/.bin/webpack
-
-watch:
-	./node_modules/.bin/webpack -w
-
-go-standalone:
-	go run main.go pages.go json.go template.go standalone.go
-
-go-build:
+	npm run build
 	go build -o bin/main
 
-go-build-linux:
-	GOOS=linux GOARCH=amd64 go build -o bin/main
-	
+run:
+	go run main.go pages.go json.go template.go
+
+run-js:
+	npm run watch
+
+dsstore:
+	find . -name .DS_Store -delete

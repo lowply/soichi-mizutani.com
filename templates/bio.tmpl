@@ -1,8 +1,8 @@
 {{define "bio"}}
-	{{ block "_header" . }}{{ end }}
+	{{ template "header" . }}
 
 		<article>
-	    {{ template "_menu" . }}
+	    {{ template "menu" . }}
 			<section id="content">
 				<h2>Information / {{ .Title }}</h2>
 				<div id="lang"><a href="#j">日本語</a>&nbsp;/&nbsp;<a href="#e">English</a></div>
@@ -382,6 +382,6 @@
 			</section>
 		</article>
 
-	{{ block "_bottom" . }}{{ end }}
-	{{ block "_footer" . }}{{ end }}
+	{{ template "bottom" . }}
+	{{ template "footer" . }}
 {{end}}

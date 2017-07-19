@@ -30,7 +30,8 @@ build:
     - script:
         name: go get
         code: |
-          go get
+          go get -u github.com/golang/dep/cmd/dep
+          dep ensure -update -v
 
     # Build the project
     - script:

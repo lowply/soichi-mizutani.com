@@ -1,8 +1,8 @@
 {{define "links"}}
-	{{ block "_header" . }}{{ end }}
+	{{ template "header" . }}
 
 		<article>
-	    {{ template "_menu" . }}
+	    {{ template "menu" . }}
 			<section id="content">
 				<h2>
 					<div>Information / {{.Title}}</div>
@@ -31,6 +31,6 @@
 			</section>
 		</article>
 
-	{{ block "_bottom" . }}{{ end }}
-	{{ block "_footer" . }}{{ end }}
+	{{ template "bottom" . }}
+	{{ template "footer" . }}
 {{end}}
