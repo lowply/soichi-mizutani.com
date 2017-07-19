@@ -1,5 +1,0 @@
-package: github.com/lowply/soichi-mizutani.com
-import:
-- package: github.com/labstack/echo
-  subpackages:
-  - engine/standard

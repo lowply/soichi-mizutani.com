@@ -1,60 +1,51 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
+
+const extractSass = new ExtractTextPlugin({
+	filename: "./public/assets/build/[name].css",
+	disable: process.env.NODE_ENV === "development"
+});
 
 module.exports = [
-	// es6 compile
 	{
-		entry: [
-			'./src/js/main.jsx',
-		],
+		entry: './src/js/main.jsx',
 		output: {
-			path: path.join(__dirname, 'public', 'assets', 'build'),
-			filename: 'main.js',
+			filename: './public/assets/build/main.js'
 		},
 		module: {
-			loaders: [
-				{
-					test: /\.jsx$/,
+			rules: [{
+				test: /.js$/,
+				exclude: /node_modules/,
+				use: {
 					loader: 'babel-loader',
-					exclude: /node_modules/,
-					query: {
-						cacheDirectory: true,
-						presets: ['es2015']
+					options: {
+						presets: ['env']
 					}
-				},
-			]
-		},
-		devtool: 'source-map',
+				}
+			}],
+		}
 	},
-	// sass compile
 	{
-		entry: [
-			'./src/sass/main.sass',
-		],
+		entry: './src/sass/main.sass',
 		output: {
-			path: path.join(__dirname, 'public', 'assets', 'build'),
-			filename: 'main.css',
+			filename: './public/assets/build/main.css'
 		},
 		module: {
-			loaders: [
-				{
- 					test: /\.sass$/,
-					loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
-				},
-				{
- 					test: /\.css$/,
-					loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-				},
-				{
-					test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
-					loader: 'url-loader'
-				},
-			]
+			rules: [{
+				test: /\.sass$/,
+				use: extractSass.extract({
+					use: [{
+						loader: "css-loader"
+					}, {
+						loader: "sass-loader"
+					}],
+					// use style-loader in development
+					fallback: "style-loader"
+				})
+			}],
 		},
 		plugins: [
-			new ExtractTextPlugin("main.css")
+			extractSass
 		],
-		devtool: 'source-map',
-	},
+	}
 ];

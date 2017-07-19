@@ -1,7 +1,7 @@
 default: run
 
 install:
-	glide install
+	dep ensure
 	npm install
 
 run:
