@@ -1,5 +1,7 @@
 # soichi-mizutani.com
 
+[![wercker status](https://app.wercker.com/status/d02a408c1b945c67d27eae80495da233/s/ "wercker status")](https://app.wercker.com/project/byKey/d02a408c1b945c67d27eae80495da233)
+
 ## Development
 
 - Install Go
