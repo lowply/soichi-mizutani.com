@@ -6,10 +6,12 @@ jobs:
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     steps:
       - checkout
-      - run: make deps
-      - run: make build
+      - run: 
+        command: |
+          make deps
+          make build
       - deploy:
-        name: Maybe
+        name: Deploy to VPS
         command: |
           SRC="bin templates public"
           if [ "${CIRCLE_BRANCH}" != "master" ];
