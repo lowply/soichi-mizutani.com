@@ -26,3 +26,6 @@ run:
 
 run-js:
 	npm run watch
+
+deploy:
+	./deploy.sh
