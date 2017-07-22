@@ -1,0 +1,14 @@
+language: go
+go:
+- 1.8.3
+install:
+- make deps
+before_deploy:
+- make build
+deploy:
+  provider: script
+  script: deploy.sh
+  on:
+    repo: lowply/soichi-mizutani.com
+    all_branches: true
+    tags: true
