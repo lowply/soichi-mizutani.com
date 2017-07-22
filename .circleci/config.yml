@@ -6,19 +6,16 @@ jobs:
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     steps:
       - checkout
-      - run: 
-        name: Deps
-        command: |
-          make deps
-      - run: 
+      - run:
         name: Build
         command: |
+          make deps
           make build
       - deploy:
         name: Deploy to VPS
         command: |
           SRC="bin templates public"
-          if [ "${CIRCLE_BRANCH}" != "master" ];
+          if [ "${CIRCLE_BRANCH}" == "release" ];
             rsync -av --delete -e "ssh -l ${SSH_USER_NAME} -p ${SSH_PORT}" ${SRC} ${HOST}:${TARGET}/
             ssh -p ${SSH_PORT} -l ${SSH_USER_NAME} ${HOST} "supervisorctl restart ${DOMAIN}"
           fi
