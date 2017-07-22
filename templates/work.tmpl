@@ -1,9 +1,9 @@
 {{define "work"}}
-	{{ block "_header" . }}{{ end }}
+	{{ template "header" . }}
 
 		{{ $name := .Category.Name }}
 		<article id="{{ .Category.Name }}">
-		{{ template "_menu" . }}
+		{{ template "menu" . }}
 			<section id="content">
 				<h2>{{ .Category.Title }}<span></span></h2>
 				<nav>
@@ -41,6 +41,6 @@
 			</section>
 		</article>
 
-	{{ block "_bottom" . }}{{ end }}
-	{{ block "_footer" . }}{{ end }}
+	{{ template "bottom" . }}
+	{{ template "footer" . }}
 {{end}}

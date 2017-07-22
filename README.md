@@ -1,12 +1,15 @@
 # soichi-mizutani.com
 
+[![CircleCI](https://circleci.com/gh/lowply/soichi-mizutani.com.svg?style=svg)](https://circleci.com/gh/lowply/soichi-mizutani.com)
+
 ## Development
 
+- Install Go
+- Install Node, npm
+
 ```
-$ brew install glide go-app-engine-64
 $ git clone https://github.com/lowply/soichi-mizutani.com.git
 $ cd soichi-mizutani.com
-$ make install
-$ make run # for goapp serve
-$ make watch # for webpack watch
+$ make deps 
+$ make run
 ```

@@ -1,11 +1,11 @@
 {{define "index"}}
-	{{ block "_header" . }}{{ end }}
+	{{ template "header" . }}
 
 		<article>
 			<div id="poster"><a href="/works/interior-shop/#iguaneye">iGUANEYE</a></div>
 			<section id="worklist">
 				<div></div>
-				<ul>
+				<ul class="list-unstyled">
 					<li><a href="/works/interior-shop/#iguaneye">iGUANEYE</a></li>
 					<li><a href="/works/interior-shop/#hamabowl">Hamabowl</a></li>
 					<li><a href="/works/interior-shop/#freude">Freude</a></li>
@@ -30,5 +30,5 @@
 			</ul>
 		</article>
 
-	{{ block "_footer" . }}{{ end }}
+	{{ template "footer" . }}
 {{end}}
