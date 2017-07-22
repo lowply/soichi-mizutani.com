@@ -1,4 +1,3 @@
-bin
+public
 vendor
 node_modules
-public/assets/build
