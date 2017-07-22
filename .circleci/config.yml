@@ -7,9 +7,12 @@ jobs:
     steps:
       - checkout
       - run: 
-        name: Build
+        name: Deps
         command: |
           make deps
+      - run: 
+        name: Build
+        command: |
           make build
       - deploy:
         name: Deploy to VPS
