@@ -4,9 +4,6 @@ jobs:
     docker:
       - image: circleci/golang:1.8
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
-    branches:
-      only:
-        - release
     steps:
       - checkout
       - run: make deps
@@ -15,7 +12,7 @@ jobs:
         name: Deploy to VPS
         command: |
           SRC="bin templates public"
-          if [ "${CIRCLE_BRANCH}" == "release" ];
+          if [ "${CIRCLE_BRANCH}" == "quit-gae" ];
             rsync -av --delete -e "ssh -l ${SSH_USER_NAME} -p ${SSH_PORT}" ${SRC} ${HOST}:${TARGET}/
             ssh -p ${SSH_PORT} -l ${SSH_USER_NAME} ${HOST} "supervisorctl restart ${DOMAIN}"
           fi
