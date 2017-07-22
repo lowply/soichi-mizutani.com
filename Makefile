@@ -1,4 +1,4 @@
-default: run
+default: test
 
 get:
 	go get -u github.com/golang/dep/cmd/dep
@@ -17,6 +17,9 @@ build-go-mac:
 	
 build-js:
 	npm run build
+
+test:
+	go test
 
 run:
 	go run main.go json.go template.go
