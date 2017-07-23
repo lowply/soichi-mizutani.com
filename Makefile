@@ -10,7 +10,7 @@ deps: get
 build: build-go build-js
 
 build-go:
-	go build -o bin/main
+	GOOS=linux GOARCH=amd64 go build -o bin/main
 
 build-go-mac:
 	GOOS=darwin GOARCH=amd64 go build -o bin/main
