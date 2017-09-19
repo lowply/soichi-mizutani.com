@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: nginx:alpine
+    container_name: soichi-mizutani.com-web
+    ports:
+      - "3030:80"
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+  app:
+    image: soichi-mizutani.com
+    container_name: soichi-mizutani.com-app
