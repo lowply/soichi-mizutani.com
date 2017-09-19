@@ -9,5 +9,5 @@ services:
       - ./public:/usr/share/nginx/html:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
   app:
-    image: soichi-mizutani.com
+    image: lowply/soichi-mizutani.com
     container_name: soichi-mizutani.com-app
