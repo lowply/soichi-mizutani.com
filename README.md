@@ -1,13 +1,13 @@
 # soichi-mizutani.com
 
-## Development
+## Requirements for development
 
-- Install Go
-- Install Node, npm
+- Go / dep
+- Node / npm
+- Docker / Docker Compose
 
 ```
 $ git clone https://github.com/lowply/soichi-mizutani.com.git
 $ cd soichi-mizutani.com
-$ make deps 
-$ make run
+$ docker-compose up -d
 ```
