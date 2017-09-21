@@ -1,4 +1,3 @@
-env
-public
-vendor
-node_modules
+static/public/assets/build
+static/node_modules
+app/vendor

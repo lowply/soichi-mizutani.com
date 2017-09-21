@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	jsondata string = "./public/assets/data.json"
+	jsondata string = "./data.json"
 )
 
 type Data struct {

@@ -1,0 +1,367 @@
+{
+	"Category"	:	[
+		{
+			"Name"	:	"interior-shop",
+			"Title"	:	"Interior Design / Shop",
+			"Works"	: [
+				{
+					"Ename"		:	"iGUANEYE",
+					"Jname"		:	"イグアナアイ",
+					"Dir"		:	"iguaneye",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Hamabowl",
+					"Jname"		:	"ハマボール",
+					"Dir"		:	"hamabowl",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Freude Koriyama",
+					"Jname"		:	"フロイデ 郡山",
+					"Dir"		:	"freude",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Kiyokawaya TsuruokaInter",
+					"Jname"		:	"清川屋鶴岡インター店",
+					"Dir"		:	"kiyokawaya",
+					"Caption"	:	"",
+					"Jpg"		:	5
+				},
+				{
+					"Ename"		:	"Altemeister",
+					"Jname"		:	"アルテマイスター",
+					"Dir"		:	"altemeister",
+					"Caption"	:	"",
+					"Jpg"		:	9
+				},
+				{
+					"Ename"		:	"Renaude Pellegrino",
+					"Jname"		:	"ルノー・ペルグリーノ",
+					"Dir"		:	"pellegrino",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				}
+			]
+		},
+		{
+			"Name"	:	"interior-restaurant",
+			"Title"	:	"Interior Design / Restaurant",
+			"Works"	: [
+				{
+					"Ename"		:	"Senshu",
+					"Jname"		:	"千秋",
+					"Dir"		:	"senshu",
+					"Caption"	:	"",
+					"Jpg"		:	8
+				},
+				{
+					"Ename"		:	"Tesate Menteng",
+					"Jname"		:	"テサテ メンテン",
+					"Dir"		:	"tesate-menteng",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Tesate Jacarta",
+					"Jname"		:	"テサテ ジャカルタ",
+					"Dir"		:	"tesate",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Kemangi Bali",
+					"Jname"		:	"ケマンギ バリ",
+					"Dir"		:	"kemangi",
+					"Caption"	:	"",
+					"Jpg"		:	5
+				},
+				{
+					"Ename"		:	"Katsura Jacarta",
+					"Jname"		:	"桂 ジャカルタ",
+					"Dir"		:	"katsura",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Kutani Ginza",
+					"Jname"		:	"銀座 九谷",
+					"Dir"		:	"kutani",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Mary Cafe",
+					"Jname"		:	"マリーカフェ",
+					"Dir"		:	"marycafe",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				},
+				{
+					"Ename"		:	"Jyu",
+					"Jname"		:	"レストラン充",
+					"Dir"		:	"jyu",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Les Sense",
+					"Jname"		:	"レ・サンス",
+					"Dir"		:	"lessense",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				},
+				{
+					"Ename"		:	"Azabu Paris",
+					"Jname"		:	"麻布 パリ",
+					"Dir"		:	"azabu",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Setsugekka",
+					"Jname"		:	"雪月花",
+					"Dir"		:	"setsugekka",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				}
+			]
+		},
+		{
+			"Name"	:	"interior-bar",
+			"Title"	:	"Interior Design / Bar",
+			"Works"	: [
+				{
+					"Ename"		:	"Motion Blue Jakarta",
+					"Jname"		:	"モーションブルー ジャカルタ",
+					"Dir"		:	"mbjakarta",
+					"Caption"	:	"",
+					"Jpg"		:	7
+				},
+				{
+					"Ename"		:	"Bar Yuki",
+					"Jname"		:	"バー 雪",
+					"Dir"		:	"baryuki",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				},
+				{
+					"Ename"		:	"Bar NOBU",
+					"Jname"		:	"バー ノブ",
+					"Dir"		:	"barnobu",
+					"Caption"	:	"",
+					"Jpg"		:	5
+				},
+				{
+					"Ename"		:	"Air Blanc Service",
+					"Jname"		:	"エールブランサービス",
+					"Dir"		:	"airblancservice",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				}
+			]
+		},
+		{
+			"Name"	:	"interior-gallery",
+			"Title"	:	"Interior Design / Gallery",
+			"Works"	: [
+				{
+					"Ename"		:	"Shanghai EXPO 2010",
+					"Jname"		:	"上海エキスポ2010",
+					"Dir"		:	"shanghai",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Showroom EYES",
+					"Jname"		:	"ショールーム EYES",
+					"Dir"		:	"eyes",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Altemeister Showroom",
+					"Jname"		:	"アルテマイスター ショールーム",
+					"Dir"		:	"altemeister",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Hermes Exhibition",
+					"Jname"		:	"「エルメスが出会う日本の美」展",
+					"Dir"		:	"hermes",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Media House",
+					"Jname"		:	"大日本印刷メディアハウス",
+					"Dir"		:	"mediahouse",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Qualia",
+					"Jname"		:	"クオリア",
+					"Dir"		:	"qualia",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				}
+			]
+		},
+		{
+			"Name"	:	"interior-office",
+			"Title"	:	"Interior Design / Office",
+			"Works"	: [
+				{
+					"Ename"		:	"Hermes Japon Office",
+					"Jname"		:	"銀座エルメスジャポン 本社オフィス",
+					"Dir"		:	"hermes",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Roppongi 66",
+					"Jname"		:	"森ビル六本木66プロジェクト",
+					"Dir"		:	"mori66",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"STUDIUM",
+					"Jname"		:	"スタジアム",
+					"Dir"		:	"stadium",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				}
+			]
+		},
+		{
+			"Name"	:	"interior-medical",
+			"Title"	:	"Interior Design / Medical",
+			"Works"	: [
+				{
+					"Ename"		:	"Ito Dental Clinic",
+					"Jname"		:	"伊藤デンタルクリニック",
+					"Dir"		:	"ito",
+					"Caption"	:	"",
+					"Jpg"		:	9
+				},
+				{
+					"Ename"		:	"Maruhashi Dental Clinic",
+					"Jname"		:	"丸橋歯科",
+					"Dir"		:	"maruhashi",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Nakagawa Dental Clinic",
+					"Jname"		:	"中川歯科",
+					"Dir"		:	"nakagawa",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Maeda Dental Clinic",
+					"Jname"		:	"前田歯科",
+					"Dir"		:	"maeda",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				},
+				{
+					"Ename"		:	"Iijima Dental Clinic",
+					"Jname"		:	"飯島歯科",
+					"Dir"		:	"iijima",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
+					"Ename"		:	"Kuragano Dental Clinic",
+					"Jname"		:	"倉賀野歯科",
+					"Dir"		:	"kuragano",
+					"Caption"	:	"",
+					"Jpg"		:	7
+				}
+			]
+		},
+		{
+			"Name"	:	"architecture-house",
+			"Title"	:	"Architecture / House",
+			"Works"	: [
+				{
+					"Ename"		:	"Ito Dental Clinic",
+					"Jname"		:	"伊藤デンタルクリニック",
+					"Dir"		:	"ito_ex",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Murakami House Ex",
+					"Jname"		:	"村上邸 外観",
+					"Dir"		:	"murakami_ex",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"Murakami House In",
+					"Jname"		:	"村上邸 内観",
+					"Dir"		:	"murakami_in",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"M House",
+					"Jname"		:	"M邸",
+					"Dir"		:	"mhouse",
+					"Caption"	:	"",
+					"Jpg"		:	5
+				},
+				{
+					"Ename"		:	"T House",
+					"Jname"		:	"T邸",
+					"Dir"		:	"thouse",
+					"Caption"	:	"",
+					"Jpg"		:	6
+				},
+				{
+					"Ename"		:	"K House",
+					"Jname"		:	"K邸",
+					"Dir"		:	"khouse",
+					"Caption"	:	"",
+					"Jpg"		:	1
+				},
+				{
+					"Ename"		:	"J House",
+					"Jname"		:	"J邸",
+					"Dir"		:	"jhouse",
+					"Caption"	:	"",
+					"Jpg"		:	2
+				},
+				{
+					"Ename"		:	"F.M. House",
+					"Jname"		:	"F.M.邸",
+					"Dir"		:	"fmhouse",
+					"Caption"	:	"",
+					"Jpg"		:	5
+				}
+			]
+		},
+		{
+			"Name"	:	"other-complex",
+			"Title"	:	"Other / Complex",
+			"Works"	: [
+				{
+					"Ename"		:	"Qualia Minami-Azabu",
+					"Jname"		:	"クオリア 南麻布",
+					"Dir"		:	"qualia",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				}
+			]
+		}
+	]
+}

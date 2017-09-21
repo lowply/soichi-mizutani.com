@@ -6,8 +6,8 @@ services:
     ports:
       - "3040:80"
     volumes:
-      - ./public:/usr/share/nginx/html:ro
-      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./static/public:/usr/share/nginx/html:ro
+      - ./static/nginx/conf.d:/etc/nginx/conf.d:ro
   app:
     image: lowply/soichi-mizutani.com
     container_name: soichi-mizutani.com-app
