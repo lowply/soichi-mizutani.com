@@ -24,7 +24,9 @@ func main() {
 	}
 
 	e.Pre(middleware.AddTrailingSlash())
-	e.Static("/assets", "public/assets")
+
+	// Only for development
+	e.Static("/assets", "../static/public/assets")
 
 	g := e.Group("/")
 	// g.Use(standard.WrapMiddleware(cors.Default().Handler))
