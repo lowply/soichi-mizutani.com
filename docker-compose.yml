@@ -1,13 +1,14 @@
 version: '3'
 services:
   web:
-    image: nginx:alpine
+    build:
+      context: ./static
+    image: lowply/soichi-mizutani.com/web
     container_name: soichi-mizutani.com-web
     ports:
       - "3040:80"
-    volumes:
-      - ./static/public:/usr/share/nginx/html:ro
-      - ./static/nginx/conf.d:/etc/nginx/conf.d:ro
   app:
-    image: lowply/soichi-mizutani.com
+    build:
+      context: ./app
+    image: lowply/soichi-mizutani.com/app
     container_name: soichi-mizutani.com-app

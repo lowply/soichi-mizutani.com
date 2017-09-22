@@ -9,9 +9,6 @@ deps: get
 build:
 	go build -o bin/main
 
-docker-build:
-	docker build -t lowply/soichi-mizutani.com .
-
 test:
 	go test
 
