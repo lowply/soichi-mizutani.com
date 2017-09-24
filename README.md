@@ -10,12 +10,12 @@
 $ git clone https://github.com/lowply/soichi-mizutani.com.git
 $ cd soichi-mizutani.com
 
-## To develop go app
+## To work on the go app
 $ cd app
 $ make deps
 $ make run
 
-## To develop frontend
+## To work on the frontend
 $ cd static
 $ npm install
 $ npm run watch
