@@ -53,6 +53,27 @@
 			"Title"	:	"Interior Design / Restaurant",
 			"Works"	: [
 				{
+					"Ename"		:	"Ginza Sugimoto",
+					"Jname"		:	"銀座 杉もと",
+					"Dir"		:	"sugimoto",
+					"Caption"	:	"",
+					"Jpg"		:	7
+				},
+				{
+					"Ename"		:	"Ootoku",
+					"Jname"		:	"海のレストラン おおとく",
+					"Dir"		:	"ootoku",
+					"Caption"	:	"",
+					"Jpg"		:	9
+				},
+				{
+					"Ename"		:	"STAR JEWELRY CAFE & Chocolatier",
+					"Jname"		:	"STAR JEWELRY CAFE & Chocolatier",
+					"Dir"		:	"star-juwerly",
+					"Caption"	:	"",
+					"Jpg"		:	3
+				},
+				{
 					"Ename"		:	"Senshu",
 					"Jname"		:	"千秋",
 					"Dir"		:	"senshu",
@@ -245,6 +266,13 @@
 			"Title"	:	"Interior Design / Medical",
 			"Works"	: [
 				{
+					"Ename"		:	"Hasegawa Dental Office",
+					"Jname"		:	"はせがわ歯科医院",
+					"Dir"		:	"hasegawa",
+					"Caption"	:	"",
+					"Jpg"		:	9
+				},
+				{
 					"Ename"		:	"Ito Dental Clinic",
 					"Jname"		:	"伊藤デンタルクリニック",
 					"Dir"		:	"ito",
@@ -292,6 +320,13 @@
 			"Name"	:	"architecture-house",
 			"Title"	:	"Architecture / House",
 			"Works"	: [
+				{
+					"Ename"		:	"Hasegawa Dental Office",
+					"Jname"		:	"はせがわ歯科医院",
+					"Dir"		:	"hasegawa",
+					"Caption"	:	"",
+					"Jpg"		:	8
+				},
 				{
 					"Ename"		:	"Ito Dental Clinic",
 					"Jname"		:	"伊藤デンタルクリニック",
