@@ -1,0 +1,126 @@
+// ------------
+// Works
+// ------------
+
+@each $category in $categories {
+  body#works {
+    article##{$category} {
+      nav#global {
+        dl {
+          dd {
+            a[href*='#{$category}'] {
+              color: $color_nav_link_hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body#works {
+  article {
+    section#content {
+      h2 {
+        span {
+          color: $color_link_hover;
+        }
+      }
+
+      > nav {
+        margin-bottom: 60px;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 50px;
+            height: 50px;
+            margin-right: 9px;
+            margin-bottom: 9px;
+
+            &:nth-child(12n) {
+              margin-right: 0;
+            }
+
+            a {
+              display: block;
+              width: 51px;
+              height: 0;
+              padding-top: 51px;
+              overflow: hidden;
+              background-size: cover;
+              background-position: center center;
+            }
+          }
+        }
+      }
+
+      section {
+        width: 700px;
+        // display: none;
+
+        h3 {
+          margin: 0 0 10px;
+          color: $color_header_h1_hover;
+          font-size: $size_xl;
+
+          div.j {
+            font-size: $size_m;
+            font-weight: 200;
+          }
+        }
+
+        nav {
+          ul {
+            margin-bottom: 30px;
+            display: flex;
+
+            li {
+              width: 60px;
+              margin-right: 10px;
+              background: #000;
+
+              &:last-child {
+                margin: 0;
+              }
+
+              a {
+                display: block;
+                width: 60px;
+                height: 0;
+                padding-top: 60px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center center;
+                opacity: 0.2;
+              }
+            }
+          }
+        }
+
+        div {
+          overflow: hidden;
+
+          ul {
+            display: flex;
+
+            li {
+              width: 700px;
+
+              a {
+                display: block;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        div.extended {
+          width: 700px;
+        }
+      }
+    }
+  }
+}

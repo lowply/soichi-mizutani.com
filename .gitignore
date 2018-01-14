@@ -1,3 +1,4 @@
-static/public/assets/build
-static/node_modules
-app/vendor
+app/node_modules
+app/bin
+log/*
+!.keep

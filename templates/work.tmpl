@@ -1,0 +1,45 @@
+{{define "work"}}
+	{{ template "header" . }}
+	<main class="row">
+		{{ template "menu" . }}
+		{{ $name := .Category.Name }}
+		<article id="{{ .Category.Name }}" class="col-lg-9">
+			<h2>{{ .Category.Title }}<span></span></h2>
+			<nav>
+				<ul class="list-unstyled">
+					{{ range $work := .Category.Works }}
+						<li><a href="/works/{{ $name }}/{{ $work.Dir }}/"></a></li>
+					{{ end }}
+				</ul>
+			</nav>
+
+			<section class="{{.Work.Dir}}">
+				{{ if not .Work.Dir }} {{/* .Work doesn't work as it contains an empty slice, .Jpg */}}
+					&nbsp;
+				{{ else }}
+				<h3>
+					<div class="j">{{ .Work.Jname }}</div>
+					<div class="e">{{ .Work.Ename }}</div>
+				</h3>
+				<nav>
+					<ul class="list-unstyled">
+					{{ range $j := .Work.Jpg }}
+						<li><a href="#{{ $j }}">{{ $j }}</a></li>
+					{{ end }}
+					</ul>
+				</nav>
+				<div>
+					{{ $dir := .Work.Dir }}
+					<ul class="list-unstyled">
+					{{ range $j := .Work.Jpg }}
+						<li><a href="#"><img src="/assets/img/works/{{ $name }}/{{ $dir }}/{{ $j }}"></a></li>
+					{{ end }}
+					</ul>
+				</div>
+			{{ end }}
+			</section>
+		</article>
+	</main>
+
+	{{ template "footer" . }}
+{{end}}

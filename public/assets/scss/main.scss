@@ -1,0 +1,469 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$categories: interior-shop, interior-restaurant, interior-bar, interior-gallery, interior-office, interior-medical, architecture-house, other-complex;
+
+$color_header_h1: #666;
+$color_header_h1_hover: #888;
+$color_h2: #CCC;
+$color_text: #333;
+$color_unimportant: #EEE;
+$color_link: #444;
+$color_link_hover: #999;
+$color_nav_link: #999;
+$color_nav_link_hover: #333;
+
+$size_xs: 12px;
+$size_sm: 14px;
+$size_md: 15px;
+$size_xl: 22px;
+
+@mixin hlink(){
+	text-decoration: none;
+	color: $color_link_hover;
+}
+
+body {
+	nav.navbar {
+		display: none;
+	}
+	a {
+		color: $color_link;
+		&:hover {
+				@include hlink();
+		}
+	}
+	div.container {
+		header {
+			margin: 140px auto;
+
+			h1 {
+				font-size: 20px;
+				letter-spacing: 0.02em;
+
+				a {
+					color: $color_header_h1;
+
+					span {
+						font-weight: 300;
+						@include media-breakpoint-down(sm) {
+							display: block;
+						}
+					}
+
+					&:hover {
+						text-decoration: none;
+						color: $color_header_h1_hover;
+					}
+				}
+			}
+		}
+		main {
+			article {
+				min-height: 600px;
+
+				// Category title
+				h2 {
+					margin: 0 0 20px;
+					color: $color_h2;
+					font-size: $size_xl;
+				}
+			}
+			nav#global {
+				font-size: $size_md;
+				h5 {
+					font-size: $size_md;
+					font-weight: bold;
+					margin: 30px auto 10px;
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+				ul {
+					li {
+						margin-bottom: 5px;
+						a {
+							&:hover {
+								@include hlink();
+							}
+						}
+					}
+					li.disabled {
+						color: $color_unimportant;
+					}
+				}
+			}
+			@each $category in $categories {
+				nav#global.#{$category} {
+					ul {
+						li {
+							a[href*="#{$category}"] {
+								@include hlink();
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+		margin: 60px 0 20px;
+		padding-top: 10px;
+		border-top: solid 1px #eee;
+		div.menu {
+			nav {
+				font-size: 14px;
+				ul {
+					display: flex;
+					li {
+						margin-right: 30px;
+						a {
+							padding: 5px;
+						}
+						a:hover {
+							@include hlink();
+						}
+					}
+				}
+			}
+		}
+		div.cr {
+			small {
+				color: $color_h2;
+			}
+		}
+	}
+}
+
+//------------------------------------------------
+// index
+//------------------------------------------------
+
+body#index {
+	div.container {
+		header {
+			h1 {
+				text-align: center;
+				margin: 0 auto;
+			}
+		}
+		main {
+			article {
+				div#poster {
+					a {
+						display: block;
+						height: 0;
+						padding-top: 545px;
+						overflow: hidden;
+						background: url(/assets/img/index/header.jpg) no-repeat top center;
+						background-size: cover;
+					}
+				}
+
+				section#worklist {
+					margin-top: 30px;
+
+					div {
+						height: 20px;
+						color: $color_nav_link;
+						margin: 10px auto;
+					}
+
+					ul {
+						padding: 0;
+						display: flex;
+						li {
+							width: 70px;
+							background: #000;
+							margin-right: 34px;
+
+							&:last-child {
+								margin: 0;
+							}
+
+							a {
+								display: block;
+								padding-top: 70px;
+								height: 0;
+								overflow: hidden;
+								background-size: cover;
+								opacity: 0.6;
+								&:hover {
+									opacity: 1;
+								}
+							}
+							$featured: (
+								interior-shop/iguaneye,
+								interior-shop/hamabowl,
+								interior-shop/freude,
+								interior-restaurant/tesate,
+								interior-restaurant/tesate-menteng,
+								architecture-house/murakami_ex,
+								architecture-house/murakami_in,
+								interior-medical/maruhashi,
+								interior-gallery/shanghai,
+								interior-gallery/eyes,
+								interior-restaurant/sugimoto,
+							);
+							@each $f in $featured {
+								a[href*="#{$f}"] {
+									background-image: url("/assets/img/works/#{$f}/1.jpg")
+								}
+							}
+						}
+						@include media-breakpoint-down(sm) {
+							flex-direction: column;
+							li {
+								width: 100%;
+								margin: 0 0 10px;
+								a {
+									background-position: center center;
+								}
+							}
+						}
+					}
+				}
+
+				> ul {
+					li {
+						text-align: center;
+					}
+				}
+
+				> ul.contact {
+					margin: 100px auto 0;
+				}
+
+				> ul.pages {
+					display: flex;
+					justify-content: center;
+					margin: 40px auto 100px;
+					@include media-breakpoint-down(sm) {
+						flex-direction: column;
+					}
+					li {
+						margin: 0 30px;
+						a:hover {
+								@include hlink();
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+		display: none;
+	}
+}
+
+//------------------------------------------------
+// works
+//------------------------------------------------
+
+body#works {
+	div.container {
+		main {
+			article {
+				h2 {
+					span {
+						color: $color_link_hover;
+					}
+				}
+				nav {
+					margin-bottom: 60px;
+
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+
+						li {
+							width: 50px;
+							height: 50px;
+							margin-right: 9px;
+							margin-bottom: 9px;
+
+							&:nth-child(12n) {
+								margin-right: 0;
+							}
+
+							a {
+								display: block;
+								width: 51px;
+								height: 0;
+								padding-top: 51px;
+								overflow: hidden;
+								background-size: cover;
+								background-position: center center;
+								background-color: #000;
+							}
+						}
+					}
+				}
+				// Work section
+				section {
+					width: 700px;
+					// Work title
+					h3 {
+						margin: 0 0 10px;
+						color: $color_header_h1_hover;
+						div.j {
+							font-weight: 200;
+						}
+					}
+					// Photo chooser
+					nav {
+						ul {
+							margin-bottom: 30px;
+							display: flex;
+							li {
+								width: 60px;
+								margin-right: 10px;
+								background: #000;
+
+								&:last-child {
+									margin: 0;
+								}
+								a {
+									display: block;
+									width: 60px;
+									height: 0;
+									padding-top: 60px;
+									overflow: hidden;
+									background-size: cover;
+									background-position: center center;
+									opacity: 0.2;
+								}
+							}
+						}
+					}
+					div {
+						overflow: hidden;
+						ul {
+							display: flex;
+							li {
+								a {
+									display: block;
+									text-align: center;
+								}
+							}
+						}
+					}
+					div {
+						ul {
+							li {
+								a {
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	body {
+		nav.navbar {
+			display: flex;
+		}
+		div.container {
+			header {
+				margin: 40px auto;
+			}
+			main {
+				nav#global {
+					display: none;
+				}
+			}
+		}
+	}
+	body#works {
+		article {
+			section {
+				div {
+					ul {
+						li {
+							a {
+								img {
+									width: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	body {
+		div.container {
+			header {
+				h1 {
+					a {
+						span {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//------------------------------------------------
+// common style for single pages
+//------------------------------------------------
+
+body#bio,
+body#company,
+body#links {
+  article {
+    section#content {
+      font-size: $size_sm;
+      h2 {
+        margin-bottom: 40px;
+      }
+      h3 {
+				margin: 30px auto 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//------------------------------------------------
+// bio
+//------------------------------------------------
+
+body#bio {
+	article {
+		section#content {
+			ul {
+				width: 100%;
+				margin-bottom: 60px;
+				padding: 0;
+
+				li {
+					border-bottom: solid 1px #ccc;
+					padding: 10px;
+					list-style: none;
+				}
+			}
+
+			div#lang {
+				text-align: right;
+
+				a[href='#j'] {
+					font-weight: bold;
+				}
+			}
+
+			div#e {
+				display: none;
+			}
+		}
+	}
+}
