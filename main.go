@@ -23,7 +23,7 @@ func main() {
 	e.Use(middleware.Recover())
 	e.Debug = true
 
-	fp, err := os.OpenFile("../log/echo.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	fp, err := os.OpenFile("log/echo.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)

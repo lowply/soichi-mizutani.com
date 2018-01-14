@@ -1,5 +1,5 @@
-node_modules
-bin
-vendor
+node_modules/*
+vendor/*
+bin/*
 log/*
 !.keep
