@@ -171,10 +171,10 @@ body#index {
 					ul {
 						padding: 0;
 						display: flex;
+						justify-content: space-between;
 						li {
 							width: 70px;
 							background: #000;
-							margin-right: 34px;
 
 							&:last-child {
 								margin: 0;
@@ -202,7 +202,6 @@ body#index {
 								interior-medical/maruhashi,
 								interior-gallery/shanghai,
 								interior-gallery/eyes,
-								interior-restaurant/sugimoto,
 							);
 							@each $f in $featured {
 								a[href*="#{$f}"] {
@@ -210,13 +209,24 @@ body#index {
 								}
 							}
 						}
+						@include media-breakpoint-down(md) {
+							flex-wrap: wrap;
+							li {
+								width: 120px;
+								margin-bottom: 10px;
+							}
+						}
 						@include media-breakpoint-down(sm) {
 							flex-direction: column;
 							li {
 								width: 100%;
-								margin: 0 0 10px;
+								margin-bottom: 10px;
 								a {
-									background-position: center center;
+									opacity: 1;
+									color: #fff;
+									padding: 5px;
+									height: 70px;
+									vertical-align: bottom;
 								}
 							}
 						}
