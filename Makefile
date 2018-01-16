@@ -5,7 +5,7 @@ deps:
 	npm i
 
 build:
-	go build -o bin/main
+	go build -o main
 
 test:
 	go test
