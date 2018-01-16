@@ -48,7 +48,7 @@ func main() {
 	g.GET("company/", Company)
 	g.GET("links/", Links)
 
-	e.Logger.Fatal(e.Start(":9999"))
+	e.Logger.Fatal(e.Start(":9000"))
 }
 
 func NotFound(c echo.Context) error {
