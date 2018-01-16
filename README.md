@@ -15,6 +15,12 @@ $ make deps
 $ make run
 ```
 
+To watch sass files:
+
+```
+$ npm run sassw
+```
+
 Then browse to `http://soichi-mizutani.localhost`
 
 ## Running in production
