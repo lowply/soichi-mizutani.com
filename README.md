@@ -5,7 +5,7 @@
 ## Development
 
 - Install [launch_socket_server](https://github.com/sstephenson/launch_socket_server) to listen to port 80
-- Run `ln -s $(pwd)/soichi-mizutani.localhost /usr/local/etc/nginx/servers/`
+- Run `ln -s $(pwd)/soichi-mizutani.localhost.conf /usr/local/etc/nginx/servers/`
 - `nginx -t && brew services start nginx`
 
 ```
