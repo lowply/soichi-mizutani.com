@@ -1,13 +1,13 @@
 {{define "company"}}
 	{{ template "header" . }}
-
-		<article>
+	<main class="row">
 	    {{ template "menu" . }}
+		<article class="col-lg-9">
 		<section id="content">
-			<h2>
-			<div>Information / {{.Title}}</div>
+			<h2>Information / {{.Title}}</h2>
+			<div></div>
 			<h3>会社概要</h3>
-			<table>
+			<table class="table">
 				<tr>
 					<th>会社名</th>
 					<td>株式会社 水谷壮市デザイン事務所<br>(Soichi Mizutani Design Office Co., Ltd.)</td>
@@ -90,10 +90,9 @@
 					</td>
 				</tr>
 			</table>
-			</h2>
-		</section>
+			</section>
 		</article>
+	</main>
 
-	{{ template "bottom" . }}
 	{{ template "footer" . }}
 {{end}}

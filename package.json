@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/lowply/soichi-mizutani.com#readme",
   "devDependencies": {
-    "bootstrap": "^4.0.0-beta.3",
+    "bootstrap": "^4.0.0",
     "node-sass": "^4.7.2"
   },
   "dependencies": {}

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
+	"strconv"
 	"strings"
 )
 
@@ -25,7 +26,7 @@ type Work struct {
 	Ename string `json:"Ename"`
 	Jname string `json:"Jname"`
 	Dir   string `json:"Dir"`
-	Jpg   []string
+	Jpg   []int
 }
 
 func parseJson(c Data, filename string) (Data, error) {
@@ -73,7 +74,11 @@ func pickWork(name string) Work {
 				files, _ := ioutil.ReadDir(location)
 				for _, f := range files {
 					if strings.Contains(f.Name(), ".jpg") {
-						work.Jpg = append(work.Jpg, f.Name())
+						num, err := strconv.Atoi(strings.Replace(f.Name(), ".jpg", "", -1))
+						if err != nil {
+							log.Fatal(err)
+						}
+						work.Jpg = append(work.Jpg, num)
 					}
 				}
 				return work

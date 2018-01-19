@@ -8,12 +8,12 @@
 			<nav>
 				<ul class="list-unstyled">
 					{{ range $work := .Category.Works }}
-						<li><a href="/works/{{ $name }}/{{ $work.Dir }}/"></a></li>
+						<li><a href="/works/{{ $name }}/{{ $work.Dir }}/">{{ $work.Ename }}</a></li>
 					{{ end }}
 				</ul>
 			</nav>
 
-			<section class="{{.Work.Dir}}">
+			<section id="work" class="{{.Work.Dir}}">
 				{{ if not .Work.Dir }} {{/* .Work doesn't work as it contains an empty slice, .Jpg */}}
 					&nbsp;
 				{{ else }}
@@ -24,7 +24,7 @@
 				<nav>
 					<ul class="list-unstyled">
 					{{ range $j := .Work.Jpg }}
-						<li><a href="#{{ $j }}">{{ $j }}</a></li>
+						<li><a href="#" id="{{ $j }}">{{ $j }}</a></li>
 					{{ end }}
 					</ul>
 				</nav>
@@ -32,7 +32,7 @@
 					{{ $dir := .Work.Dir }}
 					<ul class="list-unstyled">
 					{{ range $j := .Work.Jpg }}
-						<li><a href="#"><img src="/assets/img/works/{{ $name }}/{{ $dir }}/{{ $j }}"></a></li>
+						<li><a href="#" id="{{ $j }}"><img src="/assets/img/works/{{ $name }}/{{ $dir }}/{{ $j }}.jpg"></a></li>
 					{{ end }}
 					</ul>
 				</div>

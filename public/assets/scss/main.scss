@@ -18,8 +18,12 @@ $size_md: 15px;
 $size_xl: 22px;
 
 @mixin hlink(){
+	color: $color_nav_link_hover;
 	text-decoration: none;
-	color: $color_link_hover;
+}
+
+@mixin transition1(){
+	transition: all 200ms 0s cubic-bezier(0.9, 0, 0.1, 1.0);
 }
 
 body {
@@ -29,7 +33,8 @@ body {
 	a {
 		color: $color_link;
 		&:hover {
-				@include hlink();
+				color: $color_link_hover;
+				text-decoration: none;
 		}
 	}
 	div.container {
@@ -82,6 +87,7 @@ body {
 					li {
 						margin-bottom: 5px;
 						a {
+							color: $color_nav_link;
 							&:hover {
 								@include hlink();
 							}
@@ -117,10 +123,10 @@ body {
 					li {
 						margin-right: 30px;
 						a {
-							padding: 5px;
-						}
-						a:hover {
-							@include hlink();
+							color: $color_nav_link;
+							&:hover {
+								@include hlink();
+							}
 						}
 					}
 				}
@@ -278,23 +284,20 @@ body#works {
 						color: $color_link_hover;
 					}
 				}
-				nav {
+				> nav {
 					margin-bottom: 60px;
-
+					width: 700px;
 					ul {
 						display: flex;
 						flex-wrap: wrap;
-
 						li {
-							width: 50px;
-							height: 50px;
-							margin-right: 9px;
-							margin-bottom: 9px;
-
+							width: 51px;
+							height: 51px;
+							margin-right: 8px;
+							margin-bottom: 8px;
 							&:nth-child(12n) {
 								margin-right: 0;
 							}
-
 							a {
 								display: block;
 								width: 51px;
@@ -309,13 +312,15 @@ body#works {
 					}
 				}
 				// Work section
-				section {
+				section#work {
 					width: 700px;
 					// Work title
 					h3 {
-						margin: 0 0 10px;
+						font-size: $size_xl;
+						margin: 0 0 20px;
 						color: $color_header_h1_hover;
 						div.j {
+							font-size: $size_md;
 							font-weight: 200;
 						}
 					}
@@ -325,10 +330,8 @@ body#works {
 							margin-bottom: 30px;
 							display: flex;
 							li {
-								width: 60px;
 								margin-right: 10px;
-								background: #000;
-
+								background-color: #000;
 								&:last-child {
 									margin: 0;
 								}
@@ -340,7 +343,12 @@ body#works {
 									overflow: hidden;
 									background-size: cover;
 									background-position: center center;
-									opacity: 0.2;
+									opacity: 0.3;
+									@include transition1();
+									&:hover,
+									&.active {
+										opacity: 1;
+									}
 								}
 							}
 						}
@@ -349,7 +357,9 @@ body#works {
 						overflow: hidden;
 						ul {
 							display: flex;
+							@include transition1();
 							li {
+								flex: 0 0 700px;
 								a {
 									display: block;
 									text-align: center;
@@ -386,17 +396,45 @@ body#works {
 					display: none;
 				}
 			}
+			footer {
+				div {
+					nav {
+						ul {
+							justify-content: space-between;
+							width: 80%;
+							margin: 10px auto 30px;
+							li {
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	body#works {
-		article {
-			section {
-				div {
-					ul {
-						li {
-							a {
-								img {
-									width: 100%;
+		div.container {
+			main {
+				article {
+					> nav {
+						width: 100%;
+					}
+					section#work {
+						width: 100%;
+						nav {
+							display: none;
+						}
+						div {
+							ul {
+								flex-direction: column;
+								li {
+									flex: 0 0 0;
+									margin-bottom: 3px;
+									a {
+										img {
+											width: 100%;
+										}
+									}
 								}
 							}
 						}
@@ -415,6 +453,27 @@ body#works {
 					a {
 						span {
 							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+	body#works {
+		div.container {
+			main {
+				article {
+					section#work {
+						div {
+							ul {
+								li {
+									a {
+										img {
+											width: 100%;
+										}
+									}
+								}
+							}
 						}
 					}
 				}

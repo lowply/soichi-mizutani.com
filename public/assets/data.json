@@ -160,7 +160,7 @@
 				{
 					"Ename"		:	"Hermes Exhibition",
 					"Jname"		:	"「エルメスが出会う日本の美」展",
-					"Dir"		:	"hermes"
+					"Dir"		:	"hermes_ex"
 				},
 				{
 					"Ename"		:	"Media House",
@@ -181,7 +181,7 @@
 				{
 					"Ename"		:	"Hermes Japon Office",
 					"Jname"		:	"銀座エルメスジャポン 本社オフィス",
-					"Dir"		:	"hermes"
+					"Dir"		:	"hermes_office"
 				},
 				{
 					"Ename"		:	"Roppongi 66",

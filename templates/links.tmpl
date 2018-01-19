@@ -1,8 +1,8 @@
 {{define "links"}}
 	{{ template "header" . }}
-
-		<article>
+	<main class="row">
 	    {{ template "menu" . }}
+		<article class="col-lg-9">
 			<section id="content">
 				<h2>
 					<div>Information / {{.Title}}</div>
@@ -30,7 +30,6 @@
 					</ul>
 			</section>
 		</article>
-
-	{{ template "bottom" . }}
+	</main>
 	{{ template "footer" . }}
 {{end}}
