@@ -22,7 +22,7 @@ class WorkNav {
 
 class Work {
 	constructor(){
-		const container = $("section#work");
+		const container = $("body#works article section#work");
 		const category = container.parent().attr("id");
 		const name = container.attr("class");
 
@@ -51,6 +51,7 @@ class Work {
 		})
 
 		this.activateThumbnail(1)
+		this.wn = new WorkNav();
 	}
 	activateThumbnail(i, next = false){
 		if (next) { i = i + 1 }
@@ -87,7 +88,6 @@ class Bio {
 	}
 }
 
-wn = new WorkNav();
-w1 = new Work();
+w = new Work();
 bio = new Bio();
 

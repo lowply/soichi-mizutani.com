@@ -88,11 +88,17 @@ func Links(c echo.Context) error {
 }
 
 func Works(c echo.Context) error {
+	cat := readCategory(c.Param("cat"))
+	workName := c.Param("name")
+	if c.Param("name") == "" {
+		workName = cat.Works[0].Dir
+	}
+	work := pickWork(cat.Name, workName)
 	p := Page{
 		Title:    "Works",
 		Slag:     "works",
-		Category: readCategory(c.Param("cat")),
-		Work:     pickWork(c.Param("cat"), c.Param("name")),
+		Category: cat,
+		Work:     work,
 	}
 	return c.Render(http.StatusOK, "work", p)
-}
+
