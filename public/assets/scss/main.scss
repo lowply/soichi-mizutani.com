@@ -303,8 +303,10 @@ body#works {
 							height: 51px;
 							margin-right: 8px;
 							margin-bottom: 8px;
-							&:nth-child(12n) {
-								margin-right: 0;
+							@include media-breakpoint-up(lg) {
+								&:nth-child(12n) {
+									margin-right: 0;
+								}
 							}
 							a {
 								@include blockAnchor();
