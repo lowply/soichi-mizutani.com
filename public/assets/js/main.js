@@ -37,6 +37,8 @@ class Work {
 			$(e).css("background-image", url);
 		})
 
+		this.wn = new WorkNav();
+
 		this.navItems.on("click", (e) => {
 			let id = parseInt($(e.currentTarget).attr("id"))
 			this.activateThumbnail(id)
@@ -51,9 +53,11 @@ class Work {
 		})
 
 		this.activateThumbnail(1)
-		this.wn = new WorkNav();
 	}
 	activateThumbnail(i, next = false){
+		if (window.innerWidth < 992) {
+			return false;
+		}
 		if (next) { i = i + 1 }
 		let j = i - 1;
 		this.navItems.removeClass("active");
@@ -88,6 +92,12 @@ class Bio {
 	}
 }
 
-w = new Work();
-bio = new Bio();
+switch ($("body").attr("id")) {
+	case "works":
+		w = new Work();
+		break;
+	case "bio":
+		bio = new Bio();
+		break;
+}
 

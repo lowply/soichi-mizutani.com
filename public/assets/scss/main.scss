@@ -193,8 +193,10 @@ body#index {
 						li {
 							width: 70px;
 							background-color: #000;
-							&:last-child {
-								margin: 0;
+							@include media-breakpoint-up(lg) {
+								&:last-child {
+									margin: 0;
+								}
 							}
 							a {
 								@include blockAnchor();
@@ -237,10 +239,6 @@ body#index {
 								margin-bottom: 10px;
 								a {
 									opacity: 1;
-									color: #fff;
-									padding: 5px;
-									height: 70px;
-									vertical-align: bottom;
 								}
 							}
 						}
