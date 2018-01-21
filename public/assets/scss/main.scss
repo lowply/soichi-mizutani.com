@@ -1,0 +1,499 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$categories: interior-shop, interior-restaurant, interior-bar, interior-gallery, interior-office, interior-medical, architecture-house, other-complex;
+
+$color_header_h1: #666;
+$color_header_h1_hover: #888;
+$color_h2: #CCC;
+$color_text: #333;
+$color_unimportant: #EEE;
+$color_link: #444;
+$color_link_hover: #999;
+$color_nav_link: #999;
+$color_nav_link_hover: #333;
+
+$size_xs: 12px;
+$size_sm: 14px;
+$size_md: 15px;
+$size_xl: 22px;
+
+@mixin hlink(){
+	color: $color_nav_link_hover;
+	text-decoration: none;
+}
+
+@mixin transition1(){
+	transition: all 200ms 0s cubic-bezier(0.9, 0, 0.1, 1.0);
+}
+
+@mixin blockAnchor {
+	display: block;
+	height: 0;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+body {
+	nav.navbar {
+		display: none;
+	}
+	a {
+		color: $color_link;
+		&:hover {
+				color: $color_link_hover;
+				text-decoration: none;
+		}
+	}
+	div.container {
+		header {
+			margin: 140px auto;
+			@include media-breakpoint-down(md) {
+				margin: 40px auto;
+			}
+
+			h1 {
+				font-size: 20px;
+				letter-spacing: 0.02em;
+
+				a {
+					color: $color_header_h1;
+
+					span {
+						font-weight: 300;
+						@include media-breakpoint-down(sm) {
+							display: block;
+						}
+					}
+
+					&:hover {
+						text-decoration: none;
+						color: $color_header_h1_hover;
+					}
+				}
+			}
+		}
+		main {
+			article {
+				min-height: 600px;
+
+				// Category title
+				h2 {
+					margin: 0 0 20px;
+					color: $color_h2;
+					font-size: $size_xl;
+				}
+			}
+			nav#global {
+				@include media-breakpoint-down(md) {
+					display: none;
+				}
+				font-size: $size_md;
+				h5 {
+					font-size: $size_md;
+					font-weight: bold;
+					margin: 30px auto 10px;
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+				ul {
+					li {
+						margin-bottom: 5px;
+						a {
+							color: $color_nav_link;
+							&:hover {
+								@include hlink();
+							}
+						}
+					}
+					li.disabled {
+						color: $color_unimportant;
+					}
+				}
+			}
+			@each $category in $categories {
+				nav#global.#{$category} {
+					ul {
+						li {
+							a[href*="#{$category}"] {
+								@include hlink();
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+		margin: 60px 0 20px;
+		padding-top: 10px;
+		border-top: solid 1px #eee;
+		div.menu {
+			nav {
+				font-size: 14px;
+				ul {
+					display: flex;
+					li {
+						margin-right: 30px;
+						a {
+							color: $color_nav_link;
+							&:hover {
+								@include hlink();
+							}
+						}
+					}
+				}
+			}
+		}
+		div.cr {
+			small {
+				color: $color_h2;
+			}
+		}
+	}
+}
+
+//------------------------------------------------
+// index
+//------------------------------------------------
+
+body#index {
+	div.container {
+		header {
+			h1 {
+				text-align: center;
+				margin: 0 auto;
+			}
+		}
+		main {
+			article {
+				div#poster {
+					a {
+						@include blockAnchor();
+						padding-top: 545px;
+						background-image: url(/assets/img/index/header.jpg);
+					}
+				}
+
+				section#worklist {
+					margin-top: 30px;
+
+					div {
+						height: 20px;
+						color: $color_nav_link;
+						margin: 10px auto;
+					}
+
+					ul {
+						padding: 0;
+						display: flex;
+						justify-content: space-between;
+						li {
+							width: 70px;
+							background-color: #000;
+							&:last-child {
+								margin: 0;
+							}
+							a {
+								@include blockAnchor();
+								padding-top: 70px;
+								opacity: 0.6;
+								@include transition1();
+								&:hover {
+									opacity: 1;
+								}
+							}
+							$featured: (
+								interior-shop/iguaneye,
+								interior-shop/hamabowl,
+								interior-shop/freude,
+								interior-restaurant/tesate,
+								interior-restaurant/tesate-menteng,
+								architecture-house/murakami_ex,
+								architecture-house/murakami_in,
+								interior-medical/maruhashi,
+								interior-gallery/shanghai,
+								interior-gallery/eyes,
+							);
+							@each $f in $featured {
+								a[href*="#{$f}"] {
+									background-image: url("/assets/img/works/#{$f}/1.jpg")
+								}
+							}
+						}
+						@include media-breakpoint-down(md) {
+							flex-wrap: wrap;
+							li {
+								width: 120px;
+								margin-bottom: 10px;
+							}
+						}
+						@include media-breakpoint-down(sm) {
+							flex-direction: column;
+							li {
+								width: 100%;
+								margin-bottom: 10px;
+								a {
+									opacity: 1;
+									color: #fff;
+									padding: 5px;
+									height: 70px;
+									vertical-align: bottom;
+								}
+							}
+						}
+					}
+				}
+
+				> ul {
+					li {
+						text-align: center;
+					}
+				}
+
+				> ul.contact {
+					margin: 100px auto 0;
+				}
+
+				> ul.pages {
+					display: flex;
+					justify-content: center;
+					margin: 40px auto 100px;
+					@include media-breakpoint-down(sm) {
+						flex-direction: column;
+					}
+					li {
+						margin: 0 30px;
+						a:hover {
+								@include hlink();
+						}
+					}
+				}
+			}
+		}
+		footer {
+			margin-top: 200px;
+		}
+	}
+}
+
+//------------------------------------------------
+// works
+//------------------------------------------------
+
+body#works {
+	div.container {
+		main {
+			article {
+				h2 {
+					span {
+						color: $color_link_hover;
+					}
+				}
+				> nav {
+					margin-bottom: 60px;
+					width: 700px;
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+						li {
+							width: 51px;
+							height: 51px;
+							margin-right: 8px;
+							margin-bottom: 8px;
+							@include media-breakpoint-up(lg) {
+								&:nth-child(12n) {
+									margin-right: 0;
+								}
+							}
+							a {
+								@include blockAnchor();
+								width: 51px;
+								padding-top: 51px;
+								background-color: #000;
+							}
+						}
+					}
+				}
+				// Work section
+				section#work {
+					width: 700px;
+					// Work title
+					h3 {
+						font-size: $size_xl;
+						margin: 0 0 20px;
+						color: $color_header_h1_hover;
+						div.j {
+							font-size: $size_md;
+							font-weight: 200;
+						}
+					}
+					// Photo chooser
+					nav {
+						ul {
+							margin-bottom: 30px;
+							display: flex;
+							li {
+								margin-right: 10px;
+								background-color: #000;
+								&:last-child {
+									margin: 0;
+								}
+								a {
+									@include blockAnchor();
+									width: 60px;
+									padding-top: 60px;
+									opacity: 0.3;
+									@include transition1();
+									&:hover,
+									&.active {
+										opacity: 1;
+									}
+								}
+							}
+						}
+					}
+					div {
+						overflow: hidden;
+						ul {
+							display: flex;
+							@include transition1();
+							li {
+								flex: 0 0 700px;
+								a {
+									display: block;
+									text-align: center;
+									img {
+										@include media-breakpoint-down(sm) {
+											width: 100%;
+										}
+									}
+								}
+							}
+						}
+					}
+					div {
+						ul {
+							li {
+								a {
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	body {
+		nav.navbar {
+			display: flex;
+		}
+		div.container {
+			footer {
+				div {
+					nav {
+						ul {
+							justify-content: space-between;
+							width: 80%;
+							margin: 10px auto 30px;
+							li {
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	body#works {
+		div.container {
+			main {
+				article {
+					> nav {
+						width: 100%;
+					}
+					section#work {
+						width: 100%;
+						nav {
+							display: none;
+						}
+						div {
+							ul {
+								flex-direction: column;
+								li {
+									flex: 0 0 0;
+									margin-bottom: 3px;
+									a {
+										img {
+											width: 100%;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//------------------------------------------------
+// common style for single pages
+//------------------------------------------------
+
+body#bio,
+body#company,
+body#links {
+  article {
+    section#content {
+      font-size: $size_sm;
+      h2 {
+        margin-bottom: 40px;
+      }
+      h3 {
+				margin: 30px auto 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//------------------------------------------------
+// bio
+//------------------------------------------------
+
+body#bio {
+	article {
+		section#content {
+			ul {
+				width: 100%;
+				margin-bottom: 60px;
+				padding: 0;
+				li {
+					border-bottom: solid 1px #ccc;
+					padding: 10px;
+					list-style: none;
+				}
+			}
+			nav#lang {
+				text-align: right;
+				a {
+					&.active {
+						font-weight: bold;
+						text-decoration: underline;
+					}
+				}
+				span {
+					margin: 0 0.3em;
+				}
+			}
+		}
+	}
+}
