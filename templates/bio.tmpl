@@ -5,9 +5,11 @@
 		<article class="col-lg-9">
 			<section id="content">
 				<h2>Information / {{ .Title }}</h2>
-				<div id="lang"><a href="#j">日本語</a>&nbsp;/&nbsp;<a href="#e">English</a></div>
+				<nav id="lang">
+					<a id="ja" href="#">日本語</a><span>/</span><a id="en" href="#">English</a>
+				</nav>
 
-				<div id="j">
+				<div id="ja">
 				<h3>略歴</h3>
 				<table class="table">
 					<tr><th>1955</th><td>福井県生まれ</td></tr>
@@ -199,7 +201,7 @@
 				</table>
 				</div>
 
-				<div id="e">
+				<div id="en">
 				<h3>BIOGRAPHY</h3>
 				<table class="table">
 					<tr><th>1955</th><td>Born in Fukui Pref.</td></tr>

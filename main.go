@@ -92,7 +92,7 @@ func Works(c echo.Context) error {
 		Title:    "Works",
 		Slag:     "works",
 		Category: readCategory(c.Param("cat")),
-		Work:     pickWork(c.Param("name")),
+		Work:     pickWork(c.Param("cat"), c.Param("name")),
 	}
 	return c.Render(http.StatusOK, "work", p)
 }

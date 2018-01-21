@@ -26,6 +26,15 @@ $size_xl: 22px;
 	transition: all 200ms 0s cubic-bezier(0.9, 0, 0.1, 1.0);
 }
 
+@mixin blockAnchor {
+	display: block;
+	height: 0;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
 body {
 	nav.navbar {
 		display: none;
@@ -40,6 +49,9 @@ body {
 	div.container {
 		header {
 			margin: 140px auto;
+			@include media-breakpoint-down(md) {
+				margin: 40px auto;
+			}
 
 			h1 {
 				font-size: 20px;
@@ -74,6 +86,9 @@ body {
 				}
 			}
 			nav#global {
+				@include media-breakpoint-down(md) {
+					display: none;
+				}
 				font-size: $size_md;
 				h5 {
 					font-size: $size_md;
@@ -156,12 +171,9 @@ body#index {
 			article {
 				div#poster {
 					a {
-						display: block;
-						height: 0;
+						@include blockAnchor();
 						padding-top: 545px;
-						overflow: hidden;
-						background: url(/assets/img/index/header.jpg) no-repeat top center;
-						background-size: cover;
+						background-image: url(/assets/img/index/header.jpg);
 					}
 				}
 
@@ -180,19 +192,15 @@ body#index {
 						justify-content: space-between;
 						li {
 							width: 70px;
-							background: #000;
-
+							background-color: #000;
 							&:last-child {
 								margin: 0;
 							}
-
 							a {
-								display: block;
+								@include blockAnchor();
 								padding-top: 70px;
-								height: 0;
-								overflow: hidden;
-								background-size: cover;
 								opacity: 0.6;
+								@include transition1();
 								&:hover {
 									opacity: 1;
 								}
@@ -265,9 +273,9 @@ body#index {
 				}
 			}
 		}
-	}
-	footer {
-		display: none;
+		footer {
+			margin-top: 200px;
+		}
 	}
 }
 
@@ -299,13 +307,9 @@ body#works {
 								margin-right: 0;
 							}
 							a {
-								display: block;
+								@include blockAnchor();
 								width: 51px;
-								height: 0;
 								padding-top: 51px;
-								overflow: hidden;
-								background-size: cover;
-								background-position: center center;
 								background-color: #000;
 							}
 						}
@@ -336,13 +340,9 @@ body#works {
 									margin: 0;
 								}
 								a {
-									display: block;
+									@include blockAnchor();
 									width: 60px;
-									height: 0;
 									padding-top: 60px;
-									overflow: hidden;
-									background-size: cover;
-									background-position: center center;
 									opacity: 0.3;
 									@include transition1();
 									&:hover,
@@ -363,6 +363,11 @@ body#works {
 								a {
 									display: block;
 									text-align: center;
+									img {
+										@include media-breakpoint-down(sm) {
+											width: 100%;
+										}
+									}
 								}
 							}
 						}
@@ -388,14 +393,6 @@ body#works {
 			display: flex;
 		}
 		div.container {
-			header {
-				margin: 40px auto;
-			}
-			main {
-				nav#global {
-					display: none;
-				}
-			}
 			footer {
 				div {
 					nav {
@@ -445,43 +442,6 @@ body#works {
 	}
 }
 
-@include media-breakpoint-down(sm) {
-	body {
-		div.container {
-			header {
-				h1 {
-					a {
-						span {
-							display: block;
-						}
-					}
-				}
-			}
-		}
-	}
-	body#works {
-		div.container {
-			main {
-				article {
-					section#work {
-						div {
-							ul {
-								li {
-									a {
-										img {
-											width: 100%;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
 //------------------------------------------------
 // common style for single pages
 //------------------------------------------------
@@ -514,24 +474,23 @@ body#bio {
 				width: 100%;
 				margin-bottom: 60px;
 				padding: 0;
-
 				li {
 					border-bottom: solid 1px #ccc;
 					padding: 10px;
 					list-style: none;
 				}
 			}
-
-			div#lang {
+			nav#lang {
 				text-align: right;
-
-				a[href='#j'] {
-					font-weight: bold;
+				a {
+					&.active {
+						font-weight: bold;
+						text-decoration: underline;
+					}
 				}
-			}
-
-			div#e {
-				display: none;
+				span {
+					margin: 0 0.3em;
+				}
 			}
 		}
 	}

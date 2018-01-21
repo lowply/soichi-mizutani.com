@@ -57,10 +57,7 @@ func readCategory(name string) Category {
 	return Category{}
 }
 
-func pickWork(name string) Work {
-	if name == "" {
-		return Work{}
-	}
+func pickWork(cat string, name string) Work {
 	d := Data{}
 	data, err := parseJson(d, jsondata)
 	if err != nil {
@@ -68,20 +65,22 @@ func pickWork(name string) Work {
 	}
 
 	for _, category := range data.Categories {
-		for _, work := range category.Works {
-			if work.Dir == name {
-				location := "./public/assets/img/works/" + category.Name + "/" + work.Dir
-				files, _ := ioutil.ReadDir(location)
-				for _, f := range files {
-					if strings.Contains(f.Name(), ".jpg") {
-						num, err := strconv.Atoi(strings.Replace(f.Name(), ".jpg", "", -1))
-						if err != nil {
-							log.Fatal(err)
+		if category.Name == cat {
+			for _, work := range category.Works {
+				if work.Dir == name {
+					location := "./public/assets/img/works/" + category.Name + "/" + work.Dir
+					files, _ := ioutil.ReadDir(location)
+					for _, f := range files {
+						if strings.Contains(f.Name(), ".jpg") {
+							num, err := strconv.Atoi(strings.Replace(f.Name(), ".jpg", "", -1))
+							if err != nil {
+								log.Fatal(err)
+							}
+							work.Jpg = append(work.Jpg, num)
 						}
-						work.Jpg = append(work.Jpg, num)
 					}
+					return work
 				}
-				return work
 			}
 		}
 	}
