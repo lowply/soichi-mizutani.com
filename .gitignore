@@ -1,6 +1,3 @@
-node_modules/*
-vendor/*
-log/*
-public/assets/css/*
-main
-!.keep
+_site
+.sass-cache
+.jekyll-metadata

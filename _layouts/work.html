@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+{% assign collection = site.collections | where: "label", page.collection | first %} 
+
+<main class="row">
+	{%- include menu.html -%}
+	<article id="{{ page.collection }}" class="col-lg-9">
+		<h2>{{ collection.title }}<span></span></h2>
+		<nav>
+			<ul class="list-unstyled">
+				{% for work in collection.docs %}
+					<li><a href="/works/{{ work.collection }}/{{ work.slug }}/">{{ work.ename }}</a></li>
+				{% endfor %}
+			</ul>
+		</nav>
+		<section id="work" class="{{ page.slug }}">
+			<h3>
+				<div class="j">{{ page.jname }}</div>
+				<div class="e">{{ page.ename }}</div>
+			</h3>
+			<nav>
+				<ul class="list-unstyled">
+					{% for i in (1..page.num) %}
+						<li><a href="#" id="{{ i }}">{{ i }}</a></li>
+					{% endfor %}
+				</ul>
+			</nav>
+			<div>
+				<ul class="list-unstyled">
+					{% for i in (1..page.num) %}
+						<li><a href="#" id="{{ i }}"><img src="/assets/img/works/{{ page.collection }}/{{ page.slug }}/{{ i }}.jpg"></a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+	</article>
+</main>

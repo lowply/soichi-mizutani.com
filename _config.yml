@@ -1,0 +1,48 @@
+title: Soichi Mizutani
+email: lowply@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Soichi Mizutani Design Office Co., Ltd. : 水谷壮市デザイン事務所
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: lowply
+github_username:  lowply
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+collections:
+  interior-shop:
+    output: true
+    title: Interior Design / Shop
+    permalink: /works/:collection/:path/
+  interior-restaurant:
+    output: true
+    title: Interior Design / Restaurant
+    permalink: /works/:collection/:path/
+  interior-bar:
+    output: true
+    title: Interior Design / Bar
+    permalink: /works/:collection/:path/
+  interior-gallery:
+    output: true
+    title: Interior Design / Gallery
+    permalink: /works/:collection/:path/
+  interior-office:
+    output: true
+    title: Interior Design / Office
+    permalink: /works/:collection/:path/
+  interior-medical:
+    output: true
+    title: Interior Design / Medical
+    permalink: /works/:collection/:path/
+  architecture-house:
+    output: true
+    title: Architecture / House
+    permalink: /works/:collection/:path/
+  other-complex:
+    output: true
+    title: Other / Complex
+    permalink: /works/:collection/:path/
+collections_dir: works
