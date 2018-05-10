@@ -16,33 +16,33 @@ collections:
   interior-shop:
     output: true
     title: Interior Design / Shop
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
   interior-restaurant:
     output: true
     title: Interior Design / Restaurant
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
   interior-bar:
     output: true
     title: Interior Design / Bar
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
   interior-gallery:
     output: true
     title: Interior Design / Gallery
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
   interior-office:
     output: true
     title: Interior Design / Office
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
   interior-medical:
     output: true
     title: Interior Design / Medical
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
   architecture-house:
     output: true
     title: Architecture / House
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
   other-complex:
     output: true
     title: Other / Complex
-    permalink: /works/:collection/:path/
+    permalink: /works/:collection/:slug/
 collections_dir: works

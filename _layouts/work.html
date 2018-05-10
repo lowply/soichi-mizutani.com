@@ -10,7 +10,8 @@ layout: default
 		<h2>{{ collection.title }}<span></span></h2>
 		<nav>
 			<ul class="list-unstyled">
-				{% for work in collection.docs %}
+				{% assign col = collection.docs | sort %}
+				{% for work in col %}
 					<li><a href="/works/{{ work.collection }}/{{ work.slug }}/">{{ work.ename }}</a></li>
 				{% endfor %}
 			</ul>
@@ -20,17 +21,19 @@ layout: default
 				<div class="j">{{ page.jname }}</div>
 				<div class="e">{{ page.ename }}</div>
 			</h3>
+			{% assign image_path = "/assets/img/works/" | append: page.collection | append: "/" | append: page.slug %}
+			{% assign image_files = site.static_files | where_exp: "img", "img.path contains image_path" %}
 			<nav>
 				<ul class="list-unstyled">
-					{% for i in (1..page.num) %}
-						<li><a href="#" id="{{ i }}">{{ i }}</a></li>
+					{% for i in image_files %}
+						<li><a href="#" id="{{ forloop.index }}">{{ forloop.index }}</a></li>
 					{% endfor %}
 				</ul>
 			</nav>
 			<div>
 				<ul class="list-unstyled">
-					{% for i in (1..page.num) %}
-						<li><a href="#" id="{{ i }}"><img src="/assets/img/works/{{ page.collection }}/{{ page.slug }}/{{ i }}.jpg"></a></li>
+					{% for img in image_files %}
+						<li><a href="#" id="{{ forloop.index }}"><img src="{{ img.path }}"></a></li>
 					{% endfor %}
 				</ul>
 			</div>

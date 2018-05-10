@@ -12,9 +12,14 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="{{ page.title }} | {{ site.description }}">
+		{% if page.ename %}
+			{% assign title = page.ename %}
+		{% else %}
+			{% assign title = page.title %}
+		{% endif %}
+		<meta name="description" content="{{ title }} | {{ site.description }}">
 		<meta name="author" content="">
-		<title>{{ page.title }} | {{ site.description }}</title>
+		<title>{{ title }} | {{ site.description }}</title>
 		<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
