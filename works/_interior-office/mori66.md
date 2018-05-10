@@ -1,8 +1,0 @@
----
-layout: "work"
-type: "works"
-ename: Roppongi 66
-jname: 森ビル六本木66プロジェクト
-slug: mori66
-num: 3
----
