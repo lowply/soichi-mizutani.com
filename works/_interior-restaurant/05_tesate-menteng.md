@@ -1,5 +1,4 @@
 ---
-layout: "work"
 type: "works"
 ename: Tesate Menteng
 jname: テサテ メンテン

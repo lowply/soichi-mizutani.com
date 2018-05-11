@@ -1,5 +1,4 @@
 ---
-layout: "work"
 type: "works"
 ename: Jyu
 jname: レストラン充
