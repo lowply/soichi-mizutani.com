@@ -21,7 +21,7 @@ layout: default
 				<div class="j">{{ page.jname }}</div>
 				<div class="e">{{ page.ename }}</div>
 			</h3>
-			{% assign image_path = "/assets/img/works/" | append: page.collection | append: "/" | append: page.slug %}
+			{% assign image_path = "/assets/img/works/" | append: page.collection | append: "/" | append: page.slug | append: "/" %}
 			{% assign image_files = site.static_files | where_exp: "img", "img.path contains image_path" %}
 			<nav>
 				<ul class="list-unstyled">
