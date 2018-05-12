@@ -6,8 +6,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: lowply
 github_username:  lowply
-
-# Build settings
 markdown: kramdown
 theme: minima
 plugins:
@@ -15,39 +13,14 @@ plugins:
 defaults:
   - scope:
       path: ""
+      type: works
+    values:
+      layout: work
+  - scope:
+      path: "pages/works"
     values:
       layout: work
 collections:
-  interior-shop:
+  works:
     output: true
-    title: Interior Design / Shop
-    permalink: /works/:collection/:slug/
-  interior-restaurant:
-    output: true
-    title: Interior Design / Restaurant
-    permalink: /works/:collection/:slug/
-  interior-bar:
-    output: true
-    title: Interior Design / Bar
-    permalink: /works/:collection/:slug/
-  interior-gallery:
-    output: true
-    title: Interior Design / Gallery
-    permalink: /works/:collection/:slug/
-  interior-office:
-    output: true
-    title: Interior Design / Office
-    permalink: /works/:collection/:slug/
-  interior-medical:
-    output: true
-    title: Interior Design / Medical
-    permalink: /works/:collection/:slug/
-  architecture-house:
-    output: true
-    title: Architecture / House
-    permalink: /works/:collection/:slug/
-  other-complex:
-    output: true
-    title: Other / Complex
-    permalink: /works/:collection/:slug/
-collections_dir: works
+    permalink: /:collection/:categories/:slug/

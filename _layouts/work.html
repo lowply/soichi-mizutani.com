@@ -2,17 +2,17 @@
 layout: default
 ---
 
-{% assign collection = site.collections | where: "label", page.collection | first %} 
+{% assign works = site.works | where_exp: "w", "w.path contains page.category" %} 
+{% assign catname = site.data.categories | where: "name", page.category | first %}
 
 <main class="row">
 	{%- include menu.html -%}
-	<article id="{{ page.collection }}" class="col-lg-9">
-		<h2>{{ collection.title }}<span></span></h2>
+	<article id="{{ page.category }}" class="col-lg-9">
+		<h2>{{ catname.title }}<span></span></h2>
 		<nav>
 			<ul class="list-unstyled">
-				{% assign col = collection.docs | sort %}
-				{% for work in col %}
-					<li><a href="/works/{{ work.collection }}/{{ work.slug }}/">{{ work.ename }}</a></li>
+				{% for w in works %}
+					<li><a href="{{ w.url }}">{{ w.ename }}</a></li>
 				{% endfor %}
 			</ul>
 		</nav>
@@ -21,7 +21,7 @@ layout: default
 				<div class="j">{{ page.jname }}</div>
 				<div class="e">{{ page.ename }}</div>
 			</h3>
-			{% assign image_path = "/assets/img/works/" | append: page.collection | append: "/" | append: page.slug | append: "/" %}
+			{% assign image_path = "/assets/img/works/" | append: page.category | append: "/" | append: page.slug | append: "/" %}
 			{% assign image_files = site.static_files | where_exp: "img", "img.path contains image_path" %}
 			<nav>
 				<ul class="list-unstyled">
