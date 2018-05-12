@@ -24,3 +24,5 @@ collections:
   works:
     output: true
     permalink: /:collection/:categories/:slug/
+sass:
+  style: compressed

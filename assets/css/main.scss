@@ -2,7 +2,6 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import "bootstrap-4.1.1/bootstrap.scss";
 
 $categories: interior-shop, interior-restaurant, interior-bar, interior-gallery, interior-office, interior-medical, architecture-house, other-complex;
 
@@ -53,7 +52,7 @@ body {
 	div.container {
 		header {
 			margin: 140px auto;
-			@include media-breakpoint-down(md) {
+			@media (max-width: 768px) {
 				margin: 40px auto;
 			}
 
@@ -66,7 +65,7 @@ body {
 
 					span {
 						font-weight: 300;
-						@include media-breakpoint-down(sm) {
+						@media (max-width: 576px) {
 							display: block;
 						}
 					}
@@ -90,7 +89,7 @@ body {
 				}
 			}
 			nav#global {
-				@include media-breakpoint-down(md) {
+				@media (max-width: 768px) {
 					display: none;
 				}
 				font-size: $size_md;
@@ -197,7 +196,7 @@ body#index {
 						li {
 							width: 70px;
 							background-color: #000;
-							@include media-breakpoint-up(lg) {
+							@media (min-width: 992px) {
 								&:last-child {
 									margin: 0;
 								}
@@ -229,14 +228,14 @@ body#index {
 								}
 							}
 						}
-						@include media-breakpoint-down(md) {
+						@media (max-width: 768px) {
 							flex-wrap: wrap;
 							li {
 								width: 120px;
 								margin-bottom: 10px;
 							}
 						}
-						@include media-breakpoint-down(sm) {
+						@media (max-width: 576px) {
 							flex-direction: column;
 							li {
 								width: 100%;
@@ -263,7 +262,7 @@ body#index {
 					display: flex;
 					justify-content: center;
 					margin: 40px auto 100px;
-					@include media-breakpoint-down(sm) {
+					@media (max-width: 576px) {
 						flex-direction: column;
 					}
 					li {
@@ -305,7 +304,7 @@ body#works {
 							height: 51px;
 							margin-right: 8px;
 							margin-bottom: 8px;
-							@include media-breakpoint-up(lg) {
+							@media (min-width: 992px) {
 								&:nth-child(12n) {
 									margin-right: 0;
 								}
@@ -368,7 +367,7 @@ body#works {
 									display: block;
 									text-align: center;
 									img {
-										@include media-breakpoint-down(sm) {
+										@media (max-width: 576px) {
 											width: 100%;
 										}
 									}
@@ -391,7 +390,7 @@ body#works {
 	}
 }
 
-@include media-breakpoint-down(md) {
+@media (max-width: 768px) {
 	body {
 		nav.navbar {
 			display: flex;
