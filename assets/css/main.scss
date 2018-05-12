@@ -46,8 +46,8 @@ body {
 	a {
 		color: $color_link;
 		&:hover {
-				color: $color_link_hover;
-				text-decoration: none;
+			color: $color_link_hover;
+			text-decoration: none;
 		}
 	}
 	div.container {
@@ -212,16 +212,16 @@ body#index {
 								}
 							}
 							$featured: (
-								interior-shop/iguaneye,
-								interior-shop/hamabowl,
-								interior-shop/freude,
-								interior-restaurant/tesate,
-								interior-restaurant/tesate-menteng,
-								architecture-house/murakami-ex,
-								architecture-house/murakami-in,
-								interior-medical/maruhashi,
-								interior-gallery/shanghai,
-								interior-gallery/eyes,
+							interior-shop/iguaneye,
+							interior-shop/hamabowl,
+							interior-shop/freude,
+							interior-restaurant/tesate,
+							interior-restaurant/tesate-menteng,
+							architecture-house/murakami-ex,
+							architecture-house/murakami-in,
+							interior-medical/maruhashi,
+							interior-gallery/shanghai,
+							interior-gallery/eyes,
 							);
 							@each $f in $featured {
 								a[href*="#{$f}"] {
@@ -269,7 +269,7 @@ body#index {
 					li {
 						margin: 0 30px;
 						a:hover {
-								@include hlink();
+							@include hlink();
 						}
 					}
 				}
@@ -453,18 +453,18 @@ body#works {
 body#bio,
 body#company,
 body#links {
-  article {
-    section#content {
-      font-size: $size_sm;
-      h2 {
-        margin-bottom: 40px;
-      }
-      h3 {
+	article {
+		section#content {
+			font-size: $size_sm;
+			h2 {
+				margin-bottom: 40px;
+			}
+			h3 {
 				margin: 30px auto 20px;
-        font-weight: bold;
-      }
-    }
-  }
+				font-weight: bold;
+			}
+		}
+	}
 }
 
 //------------------------------------------------
