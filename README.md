@@ -5,4 +5,4 @@
 ## Development
 
 - Install Jekyll
-- Run `bundle exec jekyll serve`
+- `make run`
