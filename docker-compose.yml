@@ -1,0 +1,9 @@
+version: '3'
+services:
+  pages:
+    image: gh-pages
+    container_name: soichi-mizutani
+    volumes:
+      - .:/src/site
+    ports:
+      - "4000:4000"
