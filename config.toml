@@ -1,0 +1,4 @@
+baseURL = "https://soichi-mizutani.com/"
+languageCode = "en-us"
+title = "Soichi Mizutani"
+theme = "soichi-mizutani"
