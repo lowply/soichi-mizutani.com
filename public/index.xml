@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Soichi Mizutani</title>
+    <link>https://soichi-mizutani.com/</link>
+    <description>Recent content on Soichi Mizutani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Jan 2019 22:41:47 +0900</lastBuildDate>
+    
+	<atom:link href="https://soichi-mizutani.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test</title>
+      <link>https://soichi-mizutani.com/test/</link>
+      <pubDate>Wed, 02 Jan 2019 22:41:47 +0900</pubDate>
+      
+      <guid>https://soichi-mizutani.com/test/</guid>
+      <description> This is a test </description>
+    </item>
+    
+  </channel>
+</rss>
