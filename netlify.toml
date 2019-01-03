@@ -5,3 +5,6 @@
 [context.production]
 	environment = { HUGO_VERSION = "0.53" }
 [context.move-to-hugo]
+	environment = { HUGO_VERSION = "0.53" }
+    publish = "public"
+    command = "hugo"
