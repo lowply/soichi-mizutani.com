@@ -2,13 +2,11 @@
 <html lang="{{/* page.lang | default: site.lang | default: "en" */}}">
   {{ partial "header.html" }}
 
-	<body id="{{/* page.collection */}}">
     {{ partial "head.html" }}
 
-      header image comes here
-      <br>
-      list of works comes here
+    {{ .Title }}
+    {{ .Content }}
+
+    this is a layout for about page
 
     {{ partial "footer.html" }}
-	</body>
-</html>
