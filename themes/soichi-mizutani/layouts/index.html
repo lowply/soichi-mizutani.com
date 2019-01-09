@@ -1,14 +1,27 @@
-<!DOCTYPE html>
-<html lang="{{/* page.lang | default: site.lang | default: "en" */}}">
-  {{ partial "header.html" }}
-
-	<body id="{{/* page.collection */}}">
-    {{ partial "head.html" }}
-
-      header image comes here
-      <br>
-      list of works comes here
-
-    {{ partial "footer.html" }}
-	</body>
-</html>
+{{ define "main" }}
+    <main class="row">
+      <article class="col-lg-12">
+        <div id="poster"><a href="/works/interior-shop/iguaneye">iGUANEYE</a></div>
+        <section id="worklist">
+          <div></div>
+          <ul class="list-unstyled">
+            <li><a href="/works/interior-shop/iguaneye">iGUANEYE</a></li>
+            <li><a href="/works/interior-shop/hamabowl">Hamabowl</a></li>
+            <li><a href="/works/interior-shop/freude">Freude</a></li>
+            <li><a href="/works/interior-restaurant/tesate-menteng">Tesate Menteng</a></li>
+            <li><a href="/works/interior-restaurant/tesate">Tesate Jacarta</a></li>
+            <li><a href="/works/architecture-house/murakami-ex">Murakami House</a></li>
+            <li><a href="/works/architecture-house/murakami-in">Murakami House</a></li>
+            <li><a href="/works/interior-medical/maruhashi">Maruhashi</a></li>
+            <li><a href="/works/interior-gallery/shanghai">Shanghai Expo</a></li>
+            <li><a href="/works/interior-gallery/eyes">Showroom EYES</a></li>
+          </ul>
+        </section>
+        <ul class="contact list-unstyled">
+          <li><a href="https://goo.gl/maps/MTqyYU2fsq62">708, 15-14, Sakuragaoka, Shibuya, Tokyo</a></li>
+          <li>03-5728-4778</li>
+          <li><a href="mailto:soichi@soichi-mizutani.com" title="Soichi Mizutani">soichi@soichi-mizutani.com</a></li>
+        </ul>
+      </article>
+    </main>
+{{ end }}
