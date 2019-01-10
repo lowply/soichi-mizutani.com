@@ -441,33 +441,25 @@ body#works {
 }
 
 //------------------------------------------------
-// common style for single pages
+// about
 //------------------------------------------------
 
-body#bio,
-body#company,
-body#links {
+body#about {
 	article {
 		section#content {
 			font-size: $size_sm;
 			h2 {
-				margin-bottom: 40px;
+				margin: 0 auto 30px;
+			}
+			h3, h4 {
+				margin: 60px auto 30px;
 			}
 			h3 {
-				margin: 30px auto 20px;
 				font-weight: bold;
 			}
-		}
-	}
-}
-
-//------------------------------------------------
-// bio
-//------------------------------------------------
-
-body#bio {
-	article {
-		section#content {
+			h4 {
+				font-size: $size_xl;
+			}
 			ul {
 				width: 100%;
 				margin-bottom: 60px;

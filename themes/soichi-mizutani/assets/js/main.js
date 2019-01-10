@@ -74,7 +74,7 @@ class Work {
 	}
 }
 
-class Bio {
+class About {
 	constructor() {
 		this.container = $("section#content");
 		this.lang = "";
@@ -96,11 +96,14 @@ class Bio {
 	}
 }
 
-switch ($("body").attr("id")) {
-	case "works":
-		w = new Work();
-		break;
-	case "bio":
-		bio = new Bio();
-		break;
-}
+$(function(){
+	switch ($("body").attr("id")) {
+		case "works":
+			w = new Work();
+			break;
+		case "about":
+			about = new About();
+			break;
+	}
+})
+
