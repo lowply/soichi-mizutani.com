@@ -1,10 +1,11 @@
 class WorkNav {
 	constructor() {
 		const container = $("body#works article");
+        const slug = container.attr("id");
 		const list = $("> nav ul li a", container);
 		list.each((i, e) => {
-			const cat_name = $(e).attr("href");
-			const url = `url(/assets/img${cat_name}/1.jpg)`;
+            const name = $(e).attr("href").replace(/\#/, "");
+            const url = `url(/assets/img/works/${slug}/${name}/1.jpg)`;
 			const h2 = $("> h2 span", container);
 			$(e).css("background-image", url);
 			$(e).on({
