@@ -1,0 +1,61 @@
+{{ define "main" }}
+
+{{- $category_title := "" -}}
+{{- $category := path.Base .Dir -}}
+{{- range $.Site.Data.categories -}}
+    {{- if eq .name $category -}}
+      {{ $category_title = .title -}}
+    {{- end -}}
+{{- end -}}
+
+<main class="row">
+  {{ partial "sidemenu.html" . }}
+  <article id="{{ .Params.slug }}" class="col-lg-9">
+    <h2>{{ $category_title }}<span></span></h2>
+
+    <nav>
+      <ul class="list-unstyled">
+        {{ $dp := .Dir }}
+        {{ $projects := readDir (path.Join "content" .Dir) -}}
+        {{ range $projects }}
+        {{ $name := replaceRE "^[0-9][0-9]_(.*).md" "$1" .Name }}
+        {{ $fp := path.Join $dp $name }}
+        {{/*
+          HERE!!!
+          Need to get the title of each projects...
+        */}}
+        <li><a href="/{{ $fp }}">{{ $name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <section id="work" class="{{ .Params.slug }}">
+      <h3>
+        <div class="j">{{ .Params.jname }}</div>
+        <div class="e">{{ .Title }}</div>
+      </h3>
+
+
+      {{/*
+      <nav>
+        <ul class="list-unstyled">
+          {{- range $fi, $fv := $files }}
+          <li><a href="#" id="{{ add (int ($fi)) 1 }}">{{ add (int ($fi)) 1 }}</a></li>
+          {{- end }}
+        </ul>
+      </nav>
+      */}}
+
+      {{ $files := readDir (path.Join "static/assets/img" .Dir .Params.slug) -}}
+      <div>
+        <ul class="list-unstyled">
+          {{- $img_base_dir := path.Join "/assets/img" .Dir .Params.slug }}
+          {{- range $i, $fv := $files }}
+          <li><a href="#" id="{{ add (int ($i)) 1 }}"><img src="{{ path.Join $img_base_dir $fv.Name }}"></a></li>
+          {{- end }}
+        </ul>
+      </div>
+    </section>
+  </article>
+</main>
+{{ end }}

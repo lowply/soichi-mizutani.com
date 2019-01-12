@@ -1,55 +1,9 @@
 {{ define "main" }}
 
-{{/*
-{% assign works = site.works | where_exp: "w", "w.path contains page.category" %} 
-{% assign catname = site.data.categories | where: "name", page.category | first %}
-*/}}
-
 <main class="row">
   {{ partial "sidemenu.html" . }}
   <article id="{{ .Params.slug }}" class="col-lg-9">
     <h2>{{ .Title }}<span></span></h2>
-    <nav>
-      <ul class="list-unstyled">
-        {{ range .Params.projects }}
-        <li><a href="#{{ .slug }}">{{ .ename }}</a></li>
-        {{ end }}
-      </ul>
-    </nav>
-
-    {{ range .Params.projects }}
-      {{ .ename }} - {{ .jname }}
-    <section id="work" class="{{ .Params.slug }}">
-      <h3>
-        {{/*
-        <div class="j">{{ page.jname }}</div>
-        <div class="e">{{ page.ename }}</div>
-        */}}
-      </h3>
-        {{/*
-      {% assign image_path = "/assets/img/works/" | append: page.category | append: "/" | append: page.slug | append: "/" %}
-      {% assign image_files = site.static_files | where_exp: "img", "img.path contains image_path" %}
-        */}}
-      <nav>
-        <ul class="list-unstyled">
-        {{/*
-          {% for i in image_files %}
-          <li><a href="#" id="{{ forloop.index }}">{{ forloop.index }}</a></li>
-          {% endfor %}
-        */}}
-        </ul>
-      </nav>
-      <div>
-        <ul class="list-unstyled">
-        {{/*
-          {% for img in image_files %}
-          <li><a href="#" id="{{ forloop.index }}"><img src="{{ img.path }}"></a></li>
-          {% endfor %}
-        */}}
-        </ul>
-      </div>
-    </section>
-    {{ end }}
   </article>
 </main>
 {{ end }}

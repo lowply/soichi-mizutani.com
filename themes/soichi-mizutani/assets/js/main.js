@@ -1,11 +1,11 @@
 class WorkNav {
 	constructor() {
 		const container = $("body#works article");
-        const slug = container.attr("id");
+		const slug = container.attr("id");
 		const list = $("> nav ul li a", container);
 		list.each((i, e) => {
-            const name = $(e).attr("href").replace(/\#/, "");
-            const url = `url(/assets/img/works/${slug}/${name}/1.jpg)`;
+			const name = $(e).attr("href").replace(/\#/, "");
+			const url = `url(/assets/img/works/${slug}/${name}/1.jpg)`;
 			const h2 = $("> h2 span", container);
 			$(e).css("background-image", url);
 			$(e).on({
@@ -23,9 +23,17 @@ class WorkNav {
 
 class Work {
 	constructor() {
-		const container = $("body#works article section#work");
+		const projects = $("body#works article section#work");
+		projects.each((i, e) => {
+			new Project($(e).attr("class"));
+		});
+	}
+}
+
+class Project {
+	constructor(name) {
+		const container = $("body#works article section#work." + name);
 		const category = container.parent().attr("id");
-		const name = container.attr("class");
 
 		this.innerWidth = 700;
 		this.navItems = $("> nav ul li a", container);
@@ -100,10 +108,10 @@ class About {
 $(function(){
 	switch ($("body").attr("id")) {
 		case "works":
-			w = new Work();
+			new Work();
 			break;
 		case "about":
-			about = new About();
+			new About();
 			break;
 	}
 })

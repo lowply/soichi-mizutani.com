@@ -354,8 +354,8 @@ body#works {
 					div {
 						overflow: hidden;
 						ul {
-							display: flex;
-							@include transition1();
+							// display: flex;
+							// @include transition1();
 							li {
 								flex: 0 0 700px;
 								a {
