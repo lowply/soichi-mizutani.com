@@ -326,56 +326,17 @@ body#works {
 							font-weight: 200;
 						}
 					}
-					// Photo chooser
-					nav {
-						ul {
-							margin-bottom: 30px;
-							display: flex;
-							li {
-								margin-right: 10px;
-								background-color: #000;
-								&:last-child {
-									margin: 0;
-								}
-								a {
-									@include blockAnchor();
-									width: 60px;
-									padding-top: 60px;
-									opacity: 0.3;
-									@include transition1();
-									&:hover,
-									&.active {
-										opacity: 1;
-									}
-								}
-							}
-						}
-					}
 					div {
 						overflow: hidden;
 						ul {
-							// display: flex;
-							// @include transition1();
 							li {
-								flex: 0 0 700px;
-								a {
-									display: block;
-									text-align: center;
-									img {
-										@media (max-width: 576px) {
-											width: 100%;
-										}
-									}
-								}
-							}
-						}
-					}
-					div {
-						ul {
-							li {
-								a {
-									display: block;
-								}
+                text-align: center;
+                margin-bottom: 3px;
+                img {
+                  @media (max-width: 576px) {
+                    width: 100%;
+                  }
+                }
 							}
 						}
 					}
@@ -416,9 +377,6 @@ body#works {
 					}
 					section#work {
 						width: 100%;
-						nav {
-							display: none;
-						}
 						div {
 							ul {
 								flex-direction: column;

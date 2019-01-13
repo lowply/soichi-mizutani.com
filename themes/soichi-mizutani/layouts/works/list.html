@@ -1,10 +1,7 @@
-{{/*
 {{ define "main" }}
 <main class="row">
   {{ partial "sidemenu.html" . }}
-  <article id="{{ .Params.slug }}" class="col-lg-9">
-    <h2>{{ .Title }}<span></span></h2>
+  <article id="{{ path.Base .Dir }}" class="col-lg-9">
   </article>
 </main>
 {{ end }}
-*/}}

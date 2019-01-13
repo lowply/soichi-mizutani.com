@@ -1,0 +1,33 @@
+{{ define "main" }}
+<main class="row">
+  {{ partial "sidemenu.html" . }}
+  <article id="{{ path.Base .Dir }}" class="col-lg-9">
+    {{- range where $.Site.Data.categories "path" .Dir }}
+    <h2>{{ .title }}<span></span></h2>
+    {{- end }}
+    <nav>
+      <ul class="list-unstyled">
+        {{- range where .Site.RegularPages ".Dir" .Dir }}
+        <li><a href="/{{ path.Join .Dir .File }}/">{{ .Title }}</a></li>
+        {{- end -}}
+      </ul>
+    </nav>
+
+    <section id="work" class="{{ .File }}">
+      <h3>
+        <div class="j">{{ .Params.jname }}</div>
+        <div class="e">{{ .Title }}</div>
+      </h3>
+      {{ $files := readDir (path.Join "static/assets/img" .Dir .File) -}}
+      <div>
+        <ul class="list-unstyled">
+          {{- $img_base_dir := path.Join "/assets/img" .Dir .File }}
+          {{- range $fv := $files }}
+          <li><img src="{{ path.Join $img_base_dir $fv.Name }}"></li>
+          {{- end }}
+        </ul>
+      </div>
+    </section>
+  </article>
+</main>
+{{ end }}

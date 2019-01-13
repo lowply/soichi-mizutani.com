@@ -1,24 +1,24 @@
 - 
-  name: interior-shop
+  path: works/interior-shop/
   title: Interior Design / Shop
 -
-  name: interior-restaurant
+  path: works/interior-restaurant/
   title: Interior Design / Restaurant
 -
-  name: interior-bar
+  path: works/interior-bar/
   title: Interior Design / Bar
 -
-  name: interior-gallery
+  path: works/interior-gallery/
   title: Interior Design / Gallery
 -
-  name: interior-office
+  path: works/interior-office/
   title: Interior Design / Office
 -
-  name: interior-medical
+  path: works/interior-medical/
   title: Interior Design / Medical
 -
-  name: architecture-house
+  path: works/architecture-house/
   title: Architecture / House
 -
-  name: other-complex
+  path: works/other-complex/
   title: Other / Complex

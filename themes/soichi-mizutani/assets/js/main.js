@@ -4,8 +4,8 @@ class WorkNav {
 		const slug = container.attr("id");
 		const list = $("> nav ul li a", container);
 		list.each((i, e) => {
-			const name = $(e).attr("href").replace(/\#/, "");
-			const url = `url(/assets/img/works/${slug}/${name}/1.jpg)`;
+			const name = $(e).attr("href");
+			const url = `url(/assets/img/${name}1.jpg)`;
 			const h2 = $("> h2 span", container);
 			$(e).css("background-image", url);
 			$(e).on({
@@ -18,68 +18,6 @@ class WorkNav {
 				}
 			});
 		});
-	}
-}
-
-class Work {
-	constructor() {
-		const projects = $("body#works article section#work");
-		projects.each((i, e) => {
-			new Project($(e).attr("class"));
-		});
-	}
-}
-
-class Project {
-	constructor(name) {
-		const container = $("body#works article section#work." + name);
-		const category = container.parent().attr("id");
-
-		this.innerWidth = 700;
-		this.navItems = $("> nav ul li a", container);
-		this.photoBox = $("> div ul", container);
-		this.photos = $("> div ul li a", container);
-		this.photosNum = $("> div ul li", container).length;
-
-		this.navItems.each((i, e) => {
-			let url = `url(/assets/img/works/${category}/${name}/${i + 1}.jpg)`;
-			$(e).css("background-image", url);
-		});
-
-		this.wn = new WorkNav();
-
-		this.navItems.on("click", e => {
-			let id = parseInt($(e.currentTarget).attr("id"));
-			this.activateThumbnail(id);
-			e.preventDefault();
-		});
-
-		this.photos.on("click", e => {
-			let id = parseInt($(e.currentTarget).attr("id"));
-			if (id == this.photosNum) {
-				id = 0;
-			}
-			this.activateThumbnail(id, true);
-			e.preventDefault();
-		});
-
-		this.activateThumbnail(1);
-	}
-	activateThumbnail(i, next = false) {
-		if (window.innerWidth < 992) {
-			return false;
-		}
-		if (next) {
-			i = i + 1;
-		}
-		let j = i - 1;
-		this.navItems.removeClass("active");
-		$(this.navItems[j]).addClass("active");
-		this.movePhotoBox(i);
-	}
-	movePhotoBox(x) {
-		const amount = -1 * this.innerWidth * (x - 1);
-		this.photoBox.css("transform", `translateX(${amount}px)`);
 	}
 }
 
@@ -108,7 +46,7 @@ class About {
 $(function(){
 	switch ($("body").attr("id")) {
 		case "works":
-			new Work();
+		    new WorkNav();
 			break;
 		case "about":
 			new About();
