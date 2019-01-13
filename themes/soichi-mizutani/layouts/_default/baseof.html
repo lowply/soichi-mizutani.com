@@ -1,0 +1,21 @@
+{{- $section := "" -}}
+{{- if .IsHome -}}
+{{- $section = "index" -}}
+{{- else }}
+{{- $section = .Section -}}
+{{- end -}}
+
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  {{ partial "head.html" . }}
+	<body id="{{ $section }}">
+    {{ partial "menu.html" . }}
+		<div class="container">
+      {{ partial "header.html" . }}
+
+      {{ block "main" . }}{{ end }}
+
+      {{ partial "footer.html" . }}
+    </div>
+	</body>
+</html>
