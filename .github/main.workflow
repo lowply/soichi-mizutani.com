@@ -4,12 +4,12 @@ workflow "Deploy" {
 }
 
 action "Build Hugo" {
-  uses = "lowply/actions-hugo-firebase/build-hugo@master"
+  uses = "lowply/build-hugo@master"
   runs = "hugo"
 }
 
 action "Deploy to Firebase" {
-  uses = "lowply/actions-hugo-firebase/deploy-firebase@master"
+  uses = "lowply/deploy-firebase@master"
   needs = ["Build Hugo"]
   secrets = ["FIREBASE_TOKEN"]
 }
