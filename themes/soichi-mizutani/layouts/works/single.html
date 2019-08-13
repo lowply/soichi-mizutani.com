@@ -1,14 +1,14 @@
 {{ define "main" }}
       <main class="row">
         {{- partial "sidemenu.html" . }}
-        <article id="{{ path.Base .Dir }}" class="col-lg-9">
-          {{- range where $.Site.Data.categories "path" .Dir }}
+        <article id="{{ path.Base .File.Dir }}" class="col-lg-9">
+          {{- range where $.Site.Data.categories "path" .File.Dir }}
           <h2>{{ .title }}<span></span></h2>
           {{- end }}
           <nav>
             <ul class="list-unstyled">
-              {{- range where .Site.RegularPages ".Dir" .Dir }}
-              <li><a href="/{{ path.Join .Dir .File }}/">{{ .Title }}</a></li>
+              {{- range where .Site.RegularPages ".File.Dir" .File.Dir }}
+              <li><a href="/{{ path.Join .File.Dir .File.BaseFileName }}/">{{ .Title }}</a></li>
               {{- end -}}
             </ul>
           </nav>
@@ -19,10 +19,10 @@
               <div class="e">{{ .Title }}</div>
             </h3>
 
-            {{ $files := readDir (path.Join "static/assets/img" .Dir .File) -}}
+            {{ $files := readDir (path.Join "static/assets/img" .File.Dir .File.BaseFileName) -}}
             <div>
               <ul class="list-unstyled">
-                {{- $img_base_dir := path.Join "/assets/img" .Dir .File }}
+                {{- $img_base_dir := path.Join "/assets/img" .File.Dir .File.BaseFileName}}
                 {{- range $fv := $files }}
                 <li><img src="{{ path.Join $img_base_dir $fv.Name }}"></li>
                 {{- end }}

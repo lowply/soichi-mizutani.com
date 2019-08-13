@@ -1,5 +1,8 @@
-
-        <nav id="global" class="{{ path.Base .Dir }} col-lg-3">
+        {{- $d := "" -}}
+        {{- with .File -}}
+        {{- $d = path.Base .Dir -}}
+        {{- end }}
+        <nav id="global" class="{{ $d }} col-lg-3">
           <h5>Interior Design</h5>
           <ul class="list-unstyled interior">
             <li><a href="/works/interior-shop/">Shop</a></li>
