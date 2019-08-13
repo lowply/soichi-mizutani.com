@@ -1,0 +1,13 @@
+name: Build Hugo
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code into the Go module directory
+      use: actions/checkout@master
+      path: ~
+    - name: Build Hugo
+      uses: lowply/build-hugo@v0.55.6
+      run: hugo
