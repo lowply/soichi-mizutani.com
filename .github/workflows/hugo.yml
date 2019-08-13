@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code into the Go module directory
-      use: actions/checkout@master
+      uses: actions/checkout@master
       path: ~
     - name: Build Hugo
       uses: lowply/build-hugo@v0.55.6
