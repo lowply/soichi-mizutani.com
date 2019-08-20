@@ -16,3 +16,4 @@ jobs:
       uses: lowply/deploy-firebase@v2
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_PROJECT: soichi-mizutani-fb
