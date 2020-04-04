@@ -12,6 +12,7 @@
 
 ## Deployment
 
-- Run `firebase deploy -m "$(cat .git/refs/heads/master)" --project soichi-mizutani-fb --only hosting`
+- Just push to the `master` branch and GitHub Actions will build and deploy the site to Firebase hosting
+- To deploy from your local repository, run `firebase deploy -m "$(cat .git/refs/heads/master)" --project soichi-mizutani-fb --only hosting`
 - If your token has been expired, run `firebase login:ci` and update the token
 - Make sure you also update the token in [this repo's Secrets](https://github.com/lowply/soichi-mizutani.com/settings/secrets) too
