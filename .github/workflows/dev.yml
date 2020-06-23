@@ -1,0 +1,30 @@
+name: Build and deploy the master branch
+on:
+  push:
+    branches:
+    - dev
+jobs:
+  main:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: Build Hugo
+      run: |
+        curl -OL https://github.com/gohugoio/hugo/releases/download/v0.72.0/hugo_extended_0.72.0_Linux-64bit.deb
+        dpkg -i hugo_extended_0.72.0_Linux-64bit.deb
+        hugo
+    - name: Setup Node
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+    - name: Install dependencies
+      run: npm install
+    - name: Deploy
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      run: |
+        firebase deploy -m ${{ GITHUB_SHA }} \
+        --project prueba-tokyo \
+        --only hosting
