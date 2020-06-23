@@ -25,4 +25,4 @@ jobs:
     - name: Deploy
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      run: firebase deploy -m "${GITHUB_SHA}" --project prueba-tokyo --only hosting
+      run: npm run deploy

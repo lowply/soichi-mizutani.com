@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "firebase-tools": "^8.4.3"
+  },
+  "scripts": {
+      "deploy": "echo firebase deploy -m ${GITHUB_SHA} --project prueba-tokyo --only hosting"
   }
 }
