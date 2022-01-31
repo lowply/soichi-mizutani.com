@@ -1,3 +1,4 @@
 public
 resources
 static/assets/img/*
+.hugo_build.lock
