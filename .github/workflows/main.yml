@@ -10,7 +10,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
       - name: Build Hugo
-        uses: lowply/build-hugo@v0.88.1
+        uses: lowply/build-hugo@v0.92.1
       - name: Deploy to S3
         run: ./script/deploy.sh
         env:
