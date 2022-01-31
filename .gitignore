@@ -1,4 +1,3 @@
 public
 resources
-.firebase
-assets/img/*
+static/assets/img/*
