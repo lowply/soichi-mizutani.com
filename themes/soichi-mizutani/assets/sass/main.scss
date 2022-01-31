@@ -219,7 +219,7 @@ body#index {
 							);
 							@each $f in $featured {
 								a[href*="#{$f}"] {
-									background-image: url("https://assets.soichi-mizutani.com/img/#{$f}/1.jpg")
+									background-image: url("https://assets.soichi-mizutani.com/img/works/#{$f}/1.jpg")
 								}
 							}
 						}
