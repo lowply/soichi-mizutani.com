@@ -5,7 +5,7 @@ class WorkNav {
 		const list = $("> nav ul li a", container);
 		list.each((i, e) => {
 			const name = $(e).attr("href");
-			const url = `url(https://assets.soichi-mizutani.com/img${name}1.jpg)`;
+			const url = `url(/assets/img${name}1.jpg)`;
 			const h2 = $("> h2 span", container);
 			$(e).css("background-image", url);
 			$(e).on({

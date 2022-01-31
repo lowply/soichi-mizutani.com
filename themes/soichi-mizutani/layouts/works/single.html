@@ -24,7 +24,7 @@
               <ul class="list-unstyled">
                 {{ range $n := (seq .Params.photos) }}
                 {{- $img_path := path.Join $.File.Dir $.File.BaseFileName $n }}
-                <li><img src="{{ $.Site.Params.AssetURL }}/img/{{ $img_path }}.jpg"></li>
+                <li><img src="/assets/img/{{ $img_path }}.jpg"></li>
                 {{ end }}
               </ul>
             </div>
