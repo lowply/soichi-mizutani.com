@@ -5,13 +5,13 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::assets.soichi-mizutani.com"
+            "Resource": "arn:aws:s3:::soichi-mizutani.com"
         },
         {
             "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::assets.soichi-mizutani.com/*"
+            "Resource": "arn:aws:s3:::soichi-mizutani.com/*"
         }
     ]
 }
