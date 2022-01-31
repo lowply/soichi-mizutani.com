@@ -19,13 +19,13 @@
               <div class="e">{{ .Title }}</div>
             </h3>
 
-            {{ $files := readDir (path.Join "static/assets/img" .File.Dir .File.BaseFileName) -}}
             <div>
+              
               <ul class="list-unstyled">
-                {{- $img_base_dir := path.Join "/assets/img" .File.Dir .File.BaseFileName }}
-                {{- range $fv := $files }}
-                <li><img src="{{ path.Join $img_base_dir $fv.Name }}"></li>
-                {{- end }}
+                {{ range $n := (seq .Params.photos) }}
+                {{- $img_path := path.Join $.File.Dir $.File.BaseFileName $n }}
+                <li><img src="{{ $.Site.Params.AssetURL }}/img/{{ $img_path }}.jpg"></li>
+                {{ end }}
               </ul>
             </div>
           </section>

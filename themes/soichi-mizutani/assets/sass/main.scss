@@ -171,7 +171,7 @@ body#index {
 					a {
 						@include blockAnchor();
 						padding-top: 545px;
-						background-image: url(/assets/img/index/header.jpg);
+						background-image: url(https://assets.soichi-mizutani.com/img/header.jpg);
 					}
 				}
 
@@ -219,7 +219,7 @@ body#index {
 							);
 							@each $f in $featured {
 								a[href*="#{$f}"] {
-									background-image: url("/assets/img/works/#{$f}/1.jpg")
+									background-image: url("https://assets.soichi-mizutani.com/img/#{$f}/1.jpg")
 								}
 							}
 						}
