@@ -3,6 +3,9 @@ on:
   push:
     branches: main
   workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,9 +14,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Hugo
         uses: lowply/build-hugo@v0.92.1
+      - name: OIDC
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActionsOIDC@soichi-mizutani.com
+          aws-region: ap-northeast-1
       - name: Deploy to S3
         run: ./script/deploy.sh
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ap-northeast-1
