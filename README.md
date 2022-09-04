@@ -11,11 +11,11 @@
 
 ## Deployment
 
-- Just push to the `main` branch. GitHub Actions will build the site and deploy it to S3
+- Just push to the `main` branch. GitHub Actions will build the site and deploy it to Azure Blob Storage
 - Asset files such as images are stored in the `static/assets` directory
   - To deploy them, run `./script/deploy-assets.sh`
 
 ## Hosting
 
 - CDN: Cloudflare
-- Origin: S3 static website hosting
+- Origin: Azure Blob Storage static website
