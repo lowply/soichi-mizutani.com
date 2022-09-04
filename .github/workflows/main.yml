@@ -10,14 +10,15 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-      - name: Build Hugo
-        uses: lowply/build-hugo@v0.92.1
-      - name: Authenticate via OIDC
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: "Checkout Code"
+        uses: actions/checkout@v3
+      - name: "Build Hugo"
+        uses: lowply/build-hugo@v0.101.0
+      - name: "Login to Azure with OIDC"
+        uses: azure/login@v1
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActionsOIDC/soichi-mizutani.com
-          aws-region: ap-northeast-1
-      - name: Deploy to S3
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: "Deploy to Azure blob storage"
         run: ./script/deploy.sh
