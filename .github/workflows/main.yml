@@ -13,7 +13,7 @@ jobs:
       - name: "Checkout Code"
         uses: actions/checkout@v3
       - name: "Build Hugo"
-        uses: lowply/build-hugo@v0.101.0
+        uses: lowply/build-hugo@v0.102.3
       - name: "Login to Azure with OIDC"
         uses: azure/login@v1
         with:
