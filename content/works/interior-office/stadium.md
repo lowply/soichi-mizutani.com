@@ -1,6 +1,6 @@
 ---
-title: STADIUM
-jname: スタジアム
-photos: 2
+title: Office Stadium
+jname: オフィス スタジアム
+photos: 4
 weight: 103
 ---
