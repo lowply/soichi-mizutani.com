@@ -2,7 +2,7 @@
         {{- with .File -}}
         {{- $d = path.Base .Dir -}}
         {{- end }}
-        <nav id="global" class="{{ $d }} col-lg-3">
+        <nav id="global" class="{{ $d }} {{ .Params.short }} col-lg-3">
           <h5>Interior Design</h5>
           <ul class="list-unstyled interior">
             <li><a href="/works/interior-shop/">Shop</a></li>
@@ -11,10 +11,16 @@
             <li><a href="/works/interior-gallery/">Gallery</a></li>
             <li><a href="/works/interior-office/">Office</a></li>
             <li><a href="/works/interior-medical/">Medical</a></li>
+            <li><a href="/works/interior-hotel/">Hotel</a></li>
           </ul>
           <h5>Architecture</h5>
           <ul class="list-unstyled architecture">
             <li><a href="/works/architecture-house/">House</a></li>
+          </ul>
+          <h5>Exhibition</h5>
+          <ul class="list-unstyled exhibition">
+            <li><a href="/works/exhibition/void/">Void > 0<sup>4</sup> / 1998</a></li>
+            <li><a href="/works/exhibition/pole/">一本の棒 / 2011</a></li>
           </ul>
           <h5>Other Works</h5>
           <ul class="list-unstyled other">

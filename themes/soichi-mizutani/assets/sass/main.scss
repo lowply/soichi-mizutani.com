@@ -1,5 +1,5 @@
 $categories: interior-shop, interior-restaurant, interior-bar, interior-gallery,
-	interior-office, interior-medical, architecture-house, other-complex;
+	interior-office, interior-medical, interior-hotel, architecture-house, void, pole, other-complex;
 
 $color_header_h1: #666;
 $color_header_h1_hover: #888;
@@ -235,16 +235,15 @@ body#index {
 							}
 
 							$featured: (
-								interior-shop/iguaneye,
-								interior-shop/hamabowl,
-								interior-shop/freude,
-								interior-restaurant/tesate,
-								interior-restaurant/tesate-menteng,
-								architecture-house/murakami-ex,
-								architecture-house/murakami-in,
-								interior-medical/maruhashi,
-								interior-gallery/shanghai,
-								interior-gallery/eyes
+								'interior-shop/iguaneye',
+								'interior-medical/e',
+								'interior-restaurant/al-che-cciano-con-cert',
+								'interior-restaurant/senshu',
+								'architecture-house/murakami-ex',
+								'interior-medical/hasegawa',
+								'interior-medical/ito',
+								'interior-shop/0035gather',
+								'interior-gallery/eyes'
 							);
 
 						@each $f in $featured {
@@ -360,7 +359,7 @@ body#works {
 
 				// Work section
 				section#work {
-					width: 700px;
+					// width: 700px;
 
 					// Work title
 					h3 {

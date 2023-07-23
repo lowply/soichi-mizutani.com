@@ -2,25 +2,14 @@
       <main class="row">
         {{- partial "sidemenu.html" . }}
         <article id="{{ path.Base .File.Dir }}" class="col-lg-9">
-          {{- range where $.Site.Data.categories "path" .File.Dir }}
-          <h2>{{ .title }}<span></span></h2>
-          {{- end }}
-          <nav>
-            <ul class="list-unstyled">
-              {{- range where .Site.RegularPages ".File.Dir" .File.Dir }}
-              <li><a href="/{{ path.Join .File.Dir .File.BaseFileName }}/">{{ .Title }}</a></li>
-              {{- end -}}
-            </ul>
-          </nav>
-
           <section id="work" class="{{ .File }}">
             <h3>
               <div class="j">{{ .Params.jname }}</div>
-              <div class="e">{{ .Title }}</div>
+              <div class="e">{{ .Title }}{{if eq .Params.title "Void > 0" }}<sup>4</sup>{{ end }}</div>
             </h3>
 
             <div>
-
+              {{ .Content }}
               <ul class="list-unstyled">
                 {{ range $n := (seq .Params.photos) }}
                 {{- $img_path := path.Join $.File.Dir $.File.BaseFileName $n }}
