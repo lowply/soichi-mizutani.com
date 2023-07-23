@@ -1,6 +1,6 @@
 ---
-title: Senshu
-jname: 千秋
-photos: 8
+title: Senshu Jakarta
+jname: 千秋 ジャカルタ
+photos: 19
 weight: 104
 ---

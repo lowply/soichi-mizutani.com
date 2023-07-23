@@ -1,6 +1,6 @@
 ---
-title: Kuragano Dental Clinic
-jname: 倉賀野歯科
-photos: 7
+title: Kuragano Dental Clinic Toyonaka
+jname: クラガノ歯科医院 豊中
+photos: 5
 weight: 107
 ---

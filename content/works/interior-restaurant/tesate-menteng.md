@@ -1,6 +1,6 @@
 ---
 title: Tesate Menteng
 jname: テサテ メンテン
-photos: 3
+photos: 14
 weight: 105
 ---

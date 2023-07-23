@@ -1,6 +1,6 @@
 ---
-title: Katsura Jakarta
-jname: 桂 ジャカルタ
-photos: 6
+title: Japanese Restaurant Katsura Jakarta
+jname: ジャパニーズレストラン 桂 ジャカルタ
+photos: 13
 weight: 108
 ---

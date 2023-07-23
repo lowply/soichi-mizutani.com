@@ -1,4 +1,4 @@
-- 
+-
   path: works/interior-shop/
   title: Interior Design / Shop
 -
@@ -17,8 +17,14 @@
   path: works/interior-medical/
   title: Interior Design / Medical
 -
+  path: works/interior-hotel/
+  title: Interior Design / Hotel
+-
   path: works/architecture-house/
   title: Architecture / House
+-
+  path: works/exhibition/
+  title: Exhibition
 -
   path: works/other-complex/
   title: Other / Complex

@@ -1,6 +1,6 @@
 ---
-title: Ito Dental Clinic
-jname: 伊藤デンタルクリニック
-photos: 9
+title: Ito Dental Clinic Odawara
+jname: 伊藤デンタルクリニック 小田原
+photos: 17
 weight: 102
 ---

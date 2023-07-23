@@ -1,6 +1,6 @@
 ---
-title: Tesate Jakarta
-jname: テサテ ジャカルタ
-photos: 6
+title: TeSaTe Plaza Senayan Jakarta
+jname: テサテ プラザセナヤン ジャカルタ
+photos: 7
 weight: 106
 ---

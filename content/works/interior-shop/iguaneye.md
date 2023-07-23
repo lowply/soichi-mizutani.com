@@ -2,7 +2,7 @@
 title: iGUANEYE
 jname: イグアナアイ
 photos: 6
-weight: 101
+weight: 10
 aliases:
   - /works/interior-shop/
 ---
