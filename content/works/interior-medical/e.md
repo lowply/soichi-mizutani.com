@@ -1,6 +1,6 @@
 ---
 title: E.Dental&Ortho
 jname: E.Dental&Ortho
-photos: 17
+photos: 16
 weight: 96
 ---
