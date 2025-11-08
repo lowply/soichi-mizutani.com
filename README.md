@@ -4,18 +4,24 @@
 
 ## Development
 
-- Install [Hugo](https://gohugo.io/)
-- Clone this repository
-- Run `make server`
-  - To build, run `make`
+```shell
+npm i && npm run dev
+```
+
+## Assets
+
+`public/assets` is ignored.
+
+```shell
+ln -s /path/to/assets public/assets
+```
 
 ## Deployment
 
-- Just push to the `main` branch. GitHub Actions will build the site and deploy it to Azure Blob Storage
-- Asset files such as images are stored in the `static/assets` directory
-  - To deploy them, run `./script/deploy-assets.sh`
+```shell
+npm run deploy
+```
 
 ## Hosting
 
-- CDN: Cloudflare
-- Origin: Azure Blob Storage static website
+Cloudflare Workers

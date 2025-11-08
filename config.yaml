@@ -1,8 +1,0 @@
-baseURL: https://soichi-mizutani.com/
-languageCode: en-us
-title: Soichi Mizutani
-theme: soichi-mizutani
-params:
-  Description: Soichi Mizutani Design Office Co., Ltd. - 水谷壮市デザイン事務所
-minify:
-  minifyOutput: true
