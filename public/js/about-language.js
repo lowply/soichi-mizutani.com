@@ -42,11 +42,8 @@
 
     links.forEach((link) => {
       const isActive = link.dataset.lang === lang
-      if (isActive) {
-        link.setAttribute('aria-current', 'true')
-      } else {
-        link.removeAttribute('aria-current')
-      }
+      link.toggleAttribute('aria-current', isActive)
+      link.classList.toggle('font-bold', isActive)
     })
   }
 

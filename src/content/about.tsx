@@ -189,7 +189,7 @@ const ProfileJa = () => (
         <td>日本</td>
       </tr>
       <tr>
-        <td colspan="3">その他 モダンリビング,エルデコ,MODERN ART等</td>
+        <td colspan="3">その他 モダンリビング、エルデコ、MODERN ART等</td>
       </tr>
     </table>
   </div>
@@ -391,11 +391,11 @@ const CompanyJa = () => (
       </tr>
       <tr>
         <th>代表取締役</th>
-        <td>水谷壮市<br />(Soichi Mizutani)</td>
+        <td>水谷壮市</td>
       </tr>
       <tr>
         <th>所在地</th>
-        <td>〒150-0031<br />東京都渋谷区桜丘町16-13 桜丘フロントIIビル 3F MIDORI.so SHIBUYA<br />(MIDORI.so SHIBUYA, Sakuragaoka Front Building II 3F, 16-13, Sakuragaoka, Shibuya-ku, Tokyo, Japan)<br /><a href="https://goo.gl/maps/HHcSAjJ9WwQ2" target="_blank" title="">Google Maps</a></td>
+        <td>〒150-0031<br />東京都渋谷区桜丘町16-13 桜丘フロントIIビル 3F MIDORI.so SHIBUYA<br /><a href="https://goo.gl/maps/HHcSAjJ9WwQ2" target="_blank" title="">Google Maps</a></td>
       </tr>
       <tr>
         <th>連絡先</th>
@@ -483,14 +483,13 @@ const CompanyEn = () => (
       </tr>
       <tr>
         <th>Address</th>
-        <td>708, 15-14, Sakuragaoka, Shibuya-ku, Tokyo, Japan, 150-0031<br /><a href="https://goo.gl/maps/HHcSAjJ9WwQ2" target="_blank" title="">Google Maps</a></td>
+        <td>MIDORI.so SHIBUYA, Sakuragaoka Front Building II 3F<br />16-13, Sakuragaoka, Shibuya-ku, Tokyo, Japan, 150-0031<br /><a href="https://goo.gl/maps/HHcSAjJ9WwQ2" target="_blank" title="">Google Maps</a></td>
       </tr>
       <tr>
         <th>Contact</th>
         <td>
           <ul>
             <li>TEL : 090-3435-3679</li>
-            <li>FAX : 090-3435-3679</li>
             <li>Email : <a href="mailto:soichi@soichi-mizutani.com" title="Soichi Mizutani">soichi@soichi-mizutani.com</a></li>
           </ul>
         </td>
@@ -574,24 +573,26 @@ const ClientsJa = () => (
   </section>
 )
 
-export const AboutContent = () => (
-  <TwoColumnsContainer>
-    <section data-lang-root data-active-lang="ja">
-      <h2>About</h2>
-      <nav id="lang" aria-label="Language selector">
-        <a id="lang-ja" data-lang="ja" href="#" aria-current="true">日本語</a>
-        <span>/</span>
-        <a id="lang-en" data-lang="en" href="#">English</a>
-      </nav>
-      <div data-lang-panel="ja">
-        <ProfileJa />
-        <CompanyJa />
-      </div>
-      <div data-lang-panel="en" hidden aria-hidden="true">
-        <ProfileEn />
-        <CompanyEn />
-      </div>
-      <script type="module" src="/js/about-language.js"></script>
-    </section>
-  </TwoColumnsContainer>
+export const About = () => (
+  <div id="about">
+    <TwoColumnsContainer className="about">
+      <section data-lang-root data-active-lang="ja">
+        <h2>About</h2>
+        <nav id="lang" aria-label="Language selector">
+          <a id="lang-ja" data-lang="ja" href="#">日本語</a>
+          <span>/</span>
+          <a id="lang-en" data-lang="en" href="#">English</a>
+        </nav>
+        <div data-lang-panel="ja">
+          <ProfileJa />
+          <CompanyJa />
+        </div>
+        <div data-lang-panel="en" hidden aria-hidden="true">
+          <ProfileEn />
+          <CompanyEn />
+        </div>
+        <script type="module" src="/js/about-language.js"></script>
+      </section>
+    </TwoColumnsContainer>
+  </div>
 )

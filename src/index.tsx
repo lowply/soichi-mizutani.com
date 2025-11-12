@@ -3,8 +3,8 @@ import { jsxRenderer } from 'hono/jsx-renderer'
 import { Link, ViteClient } from 'vite-ssr-components/hono'
 import { appendTrailingSlash } from 'hono/trailing-slash'
 
-import { IndexContent } from './content/index'
-import { AboutContent } from './content/about'
+import { Index } from './content/index'
+import { About } from './content/about'
 
 const app = new Hono()
 
@@ -25,12 +25,15 @@ app.use(renderer)
 app.use(appendTrailingSlash())
 
 app.get('/', (c) => c.render(
-  <IndexContent />
+  <Index />
 ))
 
 app.get('/about/', (c) => c.render(
-  <AboutContent />
+  <About />
+))
+
+app.get('/works/:category/:name', (c) => c.render(
+  <About />
 ))
 
 export default app
-

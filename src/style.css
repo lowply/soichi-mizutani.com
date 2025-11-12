@@ -1,759 +1,841 @@
 @import "tailwindcss";
 
 @layer components {
-	.block-anchor {
-		@apply block h-0 overflow-hidden bg-cover bg-center bg-no-repeat transition-all duration-200;
-	}
 }
 
 body {
-	nav.navbar {}
-
-	@apply text-neutral-600;
-
-	a {
-		&:hover {
-			@apply text-neutral-400;
+  @apply text-neutral-800;
+  a {
+	@apply transition-all duration-200;
+    &:hover {
+      @apply text-neutral-400;
+    }
+  }
+  div#container {
+    @apply w-6xl mx-auto flex flex-col gap-40;
+    > header {
+      h1 {
+        @apply text-xl text-neutral-500 tracking-wide;
+        a {
+          span {
+            @apply font-semibold;
+          }
+        }
+      }
+    }
+    main {
+      > section {
+        h2 {
+          @apply text-2xl font-medium text-neutral-400;
+        }
+        h3 {
+          @apply text-2xl font-bold my-24;
+        }
+        h4 {
+          @apply text-xl font-bold mt-12 mb-6;
+        }
+      }
+    }
+    > footer {
+      @apply text-right text-neutral-400 pt-2 pb-4 border-t border-neutral-200;
+    }
+  }
+  div#container.single-column {
+    @apply text-center;
+    > main {
+      @apply flex-col gap-24;
+    }
+  }
+  div#container.two-columns {
+    > main {
+      @apply flex flex-row gap-36;
+      > nav {
+        @apply w-[15%] leading-6;
+        h5 {
+          @apply font-bold mb-3;
+        }
+        ul {
+          @apply mb-6 text-neutral-500;
+          li {
+            @apply mb-1;
+            a {
+			  @apply duration-0;
+              &:hover {
+                @apply text-neutral-900;
+              }
+            }
+          }
+        }
+      }
+      > section {
+        @apply w-[85%];
+      }
+    }
+  }
+  div#index {
+    > div#container {
+      > main {
+        > section {
+          > div {
+            @apply mb-12;
+          }
+          > ul {
+            @apply h-[70px] flex justify-between;
+            > li {
+              @apply w-[70px] bg-black;
+              > a {
+                @apply opacity-60;
+                &:hover {
+                  @apply opacity-100;
+                }
+                > img {
+                  @apply w-full h-full object-cover;
+                }
+              }
+            }
+          }
+        }
+		> ul {
+			@apply mt-24;
 		}
-	}
-
-	div#container {
-		@apply w-6xl mx-auto flex flex-col text-center gap-40;
-		header {
-			h1 {
-				@apply text-xl text-neutral-500 tracking-wide;
-
-				a {
-					span {
-						@apply font-semibold;
-					}
-
-					&:hover {
-						@apply text-neutral-400;
-					}
-				}
-			}
-		}
-
-		main {
-			@apply flex flex-col gap-24;
-			section#worklist {
-				@apply flex flex-col gap-12;
-				ul {
-					@apply flex justify-between;
-					li {
-						@apply w-[70px] h-[70px] bg-black;
-						a {
-							@apply pt-[70px] opacity-60;
-							&[href*="interior-shop/iguaneye"] {
-								@apply bg-[url("/assets/img/works/interior-shop/iguaneye/1.jpg")]
-							}
-							&[href*="interior-medical/e"] {
-								@apply bg-[url("/assets/img/works/interior-medical/e/1.jpg")]
-							}
-							&:hover {
-								@apply opacity-100;
-							}
-						}
-					}
-				}
-			}
-		}
-
-		footer {
-			@apply text-right text-neutral-300 pt-2 pb-4 border-t border-neutral-200;
-		}
-	}
+      }
+    }
+  }
+  div#about {
+    > div#container {
+      main {
+        section {
+          nav#lang {
+            @apply text-right;
+            span {
+              @apply mx-1;
+            }
+          }
+          div {
+            div {
+              table {
+                @apply w-full text-left text-sm;
+                th,
+                td {
+                  @apply align-top px-1 py-4 border-t border-t-stone-200;
+                }
+                th {
+                  @apply w-[15%];
+                }
+                td {
+                  ul {
+                    @apply flex flex-col gap-2;
+                  }
+                  dl {
+                    @apply mb-4;
+                    dt {
+                      @apply font-bold;
+                    }
+                    dd {
+                      @apply pl-3;
+                    }
+                  }
+                  div {
+                    @apply mt-4;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* @layer utilities {
-	.link-accent {
-		@apply no-underline;
-		color: var(--color-nav-link-hover);
-	}
+  .link-accent {
+    @apply no-underline;
+    color: var(--color-nav-link-hover);
+  }
 
-	.block-anchor {
-		@apply block h-0 overflow-hidden bg-cover bg-center bg-no-repeat;
-	}
+  .block-anchor {
+    @apply block h-0 overflow-hidden bg-cover bg-center bg-no-repeat;
+  }
 
-	.transition-emphasis {
-		@apply transition-all;
-		transition-duration: 200ms;
-		transition-delay: 0s;
-		transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
-	}
+  .transition-emphasis {
+    @apply transition-all;
+    transition-duration: 200ms;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  }
 }
 
 @layer base {
-	:root {
-		--color-header-h1: #666;
-		--color-header-h1-hover: #888;
-		--color-h2: #ccc;
-		--color-text: #333;
-		--color-unimportant: #eee;
-		--color-link: #444;
-		--color-link-hover: #999;
-		--color-nav-link: #999;
-		--color-nav-link-hover: #333;
-		--size-xs: 12px;
-		--size-sm: 14px;
-		--size-md: 15px;
-		--size-xl: 22px;
-	}
-
-	body {
-		nav.navbar {
-			display: none;
-		}
-
-		a {
-			color: var(--color-link);
-
-			&:hover {
-				color: var(--color-link-hover);
-				text-decoration: none;
-			}
-		}
-
-		div.container {
-			header {
-				margin: 140px auto;
-
-				h1 {
-					font-size: 20px;
-					letter-spacing: 0.02em;
-
-					a {
-						color: var(--color-header-h1);
-
-						span {
-							font-weight: 300;
-						}
-
-						&:hover {
-							color: var(--color-header-h1-hover);
-							text-decoration: none;
-						}
-					}
-				}
-			}
-
-			main {
-				article {
-					min-height: 600px;
-
-					h2 {
-						margin: 0 0 20px;
-						color: var(--color-h2);
-						font-size: var(--size-xl);
-					}
-				}
-
-				nav#global {
-					font-size: var(--size-md);
-
-					h5 {
-						font-size: var(--size-md);
-						font-weight: 700;
-						margin: 30px auto 10px;
-
-						&:first-child {
-							margin-top: 0;
-						}
-					}
-
-					ul {
-						li {
-							margin-bottom: 5px;
-
-							a {
-								color: var(--color-nav-link);
-
-								&:hover {
-									@apply link-accent;
-								}
-							}
-
-							&.disabled {
-								color: var(--color-unimportant);
-							}
-						}
-					}
-
-					&.interior-shop {
-						ul {
-							li {
-								a {
-									&[href*="interior-shop"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.interior-restaurant {
-						ul {
-							li {
-								a {
-									&[href*="interior-restaurant"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.interior-bar {
-						ul {
-							li {
-								a {
-									&[href*="interior-bar"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.interior-gallery {
-						ul {
-							li {
-								a {
-									&[href*="interior-gallery"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.interior-office {
-						ul {
-							li {
-								a {
-									&[href*="interior-office"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.interior-medical {
-						ul {
-							li {
-								a {
-									&[href*="interior-medical"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.interior-hotel {
-						ul {
-							li {
-								a {
-									&[href*="interior-hotel"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.architecture-house {
-						ul {
-							li {
-								a {
-									&[href*="architecture-house"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.void {
-						ul {
-							li {
-								a {
-									&[href*="void"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.pole {
-						ul {
-							li {
-								a {
-									&[href*="pole"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-
-					&.other-complex {
-						ul {
-							li {
-								a {
-									&[href*="other-complex"] {
-										@apply link-accent;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		footer {
-			margin: 60px 0 20px;
-			padding-top: 10px;
-			border-top: 1px solid #eee;
-
-			div.menu {
-				nav {
-					font-size: 14px;
-
-					ul {
-						display: flex;
-
-						li {
-							margin-right: 30px;
-
-							a {
-								color: var(--color-nav-link);
-
-								&:hover {
-									@apply link-accent;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			div.cr {
-				small {
-					color: var(--color-h2);
-				}
-			}
-		}
-	}
-
-	body#index {
-		div.container {
-			header {
-				h1 {
-					text-align: center;
-					margin: 0 auto;
-				}
-			}
-
-			main {
-				article {
-					div#poster {
-						a {
-							@apply block-anchor;
-							padding-top: 545px;
-							background-image: url(/assets/img/header.jpg);
-						}
-					}
-
-					section#worklist {
-						margin-top: 30px;
-
-						div {
-							height: 20px;
-							color: var(--color-nav-link);
-							margin: 10px auto;
-						}
-
-						 ul {
-							padding: 0;
-							display: flex;
-							justify-content: space-between;
-
-							li {
-								width: 70px;
-								background-color: #000;
-
-								a {
-									@apply block-anchor transition-emphasis;
-									padding-top: 70px;
-									opacity: 0.6;
-
-									&:hover {
-										opacity: 1;
-									}
-
-									&[href*="interior-shop/iguaneye"] {
-										background-image: url("/assets/img/works/interior-shop/iguaneye/1.jpg");
-									}
-
-									&[href*="interior-medical/e"] {
-										background-image: url("/assets/img/works/interior-medical/e/1.jpg");
-									}
-
-									&[href*="interior-restaurant/al-che-cciano-con-cert"] {
-										background-image: url("/assets/img/works/interior-restaurant/al-che-cciano-con-cert/1.jpg");
-									}
-
-									&[href*="interior-restaurant/senshu"] {
-										background-image: url("/assets/img/works/interior-restaurant/senshu/1.jpg");
-									}
-
-									&[href*="architecture-house/murakami-ex"] {
-										background-image: url("/assets/img/works/architecture-house/murakami-ex/1.jpg");
-									}
-
-									&[href*="interior-medical/hasegawa"] {
-										background-image: url("/assets/img/works/interior-medical/hasegawa/1.jpg");
-									}
-
-									&[href*="interior-medical/ito"] {
-										background-image: url("/assets/img/works/interior-medical/ito/1.jpg");
-									}
-
-									&[href*="interior-shop/0035gather"] {
-										background-image: url("/assets/img/works/interior-shop/0035gather/1.jpg");
-									}
-
-									&[href*="interior-gallery/eyes"] {
-										background-image: url("/assets/img/works/interior-gallery/eyes/1.jpg");
-									}
-								}
-							}
-						}
-					}
-				}
-
-				& > ul {
-					li {
-						text-align: center;
-					}
-				}
-
-				& > ul.contact {
-					margin: 100px auto 0;
-				}
-
-				& > ul.pages {
-					display: flex;
-					justify-content: center;
-					margin: 40px auto 100px;
-
-					li {
-						margin: 0 30px;
-
-						a {
-							&:hover {
-								@apply link-accent;
-							}
-						}
-					}
-				}
-			}
-		}
-
-		footer {
-			margin-top: 200px;
-		}
-	}
-
-	body#works {
-		div.container {
-			main {
-				article {
-					h2 {
-						span {
-							color: var(--color-link-hover);
-						}
-					}
-
-					& > nav {
-						margin-bottom: 60px;
-						width: 700px;
-
-						ul {
-							display: flex;
-							flex-wrap: wrap;
-
-							li {
-								width: 51px;
-								height: 51px;
-								margin-right: 8px;
-								margin-bottom: 8px;
-
-								a {
-									@apply block-anchor;
-									width: 51px;
-									padding-top: 51px;
-									background-color: #000;
-								}
-							}
-						}
-					}
-
-					section#work {
-						h3 {
-							font-size: var(--size-xl);
-							margin: 0 0 20px;
-							color: var(--color-header-h1-hover);
-
-							div.j {
-								font-size: var(--size-md);
-								font-weight: 200;
-							}
-						}
-
-						div {
-							overflow: hidden;
-
-							ul {
-								li {
-									text-align: center;
-									margin-bottom: 3px;
-
-									img {
-										width: 100%;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	body#about {
-		article {
-			section#content {
-				font-size: var(--size-sm);
-
-				h2 {
-					margin: 0 auto 30px;
-				}
-
-				h3,
-				h4 {
-					margin: 60px auto 30px;
-				}
-
-				h3 {
-					font-weight: 700;
-				}
-
-				h4 {
-					font-size: var(--size-xl);
-				}
-
-				ul {
-					width: 100%;
-					margin-bottom: 60px;
-					padding: 0;
-
-					li {
-						border-bottom: 1px solid #ccc;
-						padding: 10px;
-						list-style: none;
-					}
-				}
-
-				nav#lang {
-					text-align: right;
-
-					a {
-						&.active {
-							font-weight: 700;
-							text-decoration: underline;
-						}
-					}
-
-					span {
-						margin: 0 0.3em;
-					}
-				}
-			}
-		}
-	}
-
-	@media (max-width: 768px) {
-		body {
-			nav.navbar {
-				display: flex;
-			}
-
-			div.container {
-				header {
-					margin: 40px auto;
-				}
-
-				main {
-					nav#global {
-						display: none;
-					}
-				}
-
-				footer {
-					div {
-						nav {
-							ul {
-								justify-content: space-between;
-								width: 80%;
-								margin: 10px auto 30px;
-
-								li {
-									margin: 0;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		body#index {
-			div.container {
-				main {
-					article {
-						section#worklist {
-							ul {
-								flex-wrap: wrap;
-
-								li {
-									width: 120px;
-									margin-bottom: 10px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		body#works {
-			div.container {
-				main {
-					article {
-						& > nav {
-							width: 100%;
-						}
-
-						section#work {
-							width: 100%;
-
-							div {
-								ul {
-									flex-direction: column;
-
-									li {
-										flex: 0 0 0;
-										margin-bottom: 3px;
-
-										a {
-											img {
-												width: 100%;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@media (max-width: 576px) {
-		body {
-			div.container {
-				header {
-					h1 {
-						a {
-							span {
-								display: block;
-							}
-						}
-					}
-				}
-			}
-		}
-
-		body#index {
-			div.container {
-				main {
-					article {
-						section#worklist {
-							ul {
-								flex-direction: column;
-
-								li {
-									width: 100%;
-									margin-bottom: 10px;
-
-									a {
-										opacity: 1;
-									}
-								}
-							}
-						}
-					}
-
-					& > ul.pages {
-						flex-direction: column;
-					}
-				}
-			}
-		}
-	}
-
-	@media (min-width: 992px) {
-		body#index {
-			div.container {
-				main {
-					article {
-						section#worklist {
-							ul {
-								li {
-									&:last-child {
-										margin: 0;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		body#works {
-			div.container {
-				main {
-					article {
-						& > nav {
-							ul {
-								li {
-									&:nth-child(12n) {
-										margin-right: 0;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+  :root {
+    --color-header-h1: #666;
+    --color-header-h1-hover: #888;
+    --color-h2: #ccc;
+    --color-text: #333;
+    --color-unimportant: #eee;
+    --color-link: #444;
+    --color-link-hover: #999;
+    --color-nav-link: #999;
+    --color-nav-link-hover: #333;
+    --size-xs: 12px;
+    --size-sm: 14px;
+    --size-md: 15px;
+    --size-xl: 22px;
+  }
+
+  body {
+    nav.navbar {
+      display: none;
+    }
+
+    a {
+      color: var(--color-link);
+
+      &:hover {
+        color: var(--color-link-hover);
+        text-decoration: none;
+      }
+    }
+
+    div.container {
+      header {
+        margin: 140px auto;
+
+        h1 {
+          font-size: 20px;
+          letter-spacing: 0.02em;
+
+          a {
+            color: var(--color-header-h1);
+
+            span {
+              font-weight: 300;
+            }
+
+            &:hover {
+              color: var(--color-header-h1-hover);
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      main {
+        article {
+          min-height: 600px;
+
+          h2 {
+            margin: 0 0 20px;
+            color: var(--color-h2);
+            font-size: var(--size-xl);
+          }
+        }
+
+        nav#global {
+          font-size: var(--size-md);
+
+          h5 {
+            font-size: var(--size-md);
+            font-weight: 700;
+            margin: 30px auto 10px;
+
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+
+          ul {
+            li {
+              margin-bottom: 5px;
+
+              a {
+                color: var(--color-nav-link);
+
+                &:hover {
+                  @apply link-accent;
+                }
+              }
+
+              &.disabled {
+                color: var(--color-unimportant);
+              }
+            }
+          }
+
+          &.interior-shop {
+            ul {
+              li {
+                a {
+                  &[href*="interior-shop"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.interior-restaurant {
+            ul {
+              li {
+                a {
+                  &[href*="interior-restaurant"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.interior-bar {
+            ul {
+              li {
+                a {
+                  &[href*="interior-bar"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.interior-gallery {
+            ul {
+              li {
+                a {
+                  &[href*="interior-gallery"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.interior-office {
+            ul {
+              li {
+                a {
+                  &[href*="interior-office"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.interior-medical {
+            ul {
+              li {
+                a {
+                  &[href*="interior-medical"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.interior-hotel {
+            ul {
+              li {
+                a {
+                  &[href*="interior-hotel"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.architecture-house {
+            ul {
+              li {
+                a {
+                  &[href*="architecture-house"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.void {
+            ul {
+              li {
+                a {
+                  &[href*="void"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.pole {
+            ul {
+              li {
+                a {
+                  &[href*="pole"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+
+          &.other-complex {
+            ul {
+              li {
+                a {
+                  &[href*="other-complex"] {
+                    @apply link-accent;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      margin: 60px 0 20px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+
+      div.menu {
+        nav {
+          font-size: 14px;
+
+          ul {
+            display: flex;
+
+            li {
+              margin-right: 30px;
+
+              a {
+                color: var(--color-nav-link);
+
+                &:hover {
+                  @apply link-accent;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      div.cr {
+        small {
+          color: var(--color-h2);
+        }
+      }
+    }
+  }
+
+  body#index {
+    div.container {
+      header {
+        h1 {
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+
+      main {
+        article {
+          div#poster {
+            a {
+              @apply block-anchor;
+              padding-top: 545px;
+              background-image: url(/assets/img/header.jpg);
+            }
+          }
+
+          section#worklist {
+            margin-top: 30px;
+
+            div {
+              height: 20px;
+              color: var(--color-nav-link);
+              margin: 10px auto;
+            }
+
+             ul {
+              padding: 0;
+              display: flex;
+              justify-content: space-between;
+
+              li {
+                width: 70px;
+                background-color: #000;
+
+                a {
+                  @apply block-anchor transition-emphasis;
+                  padding-top: 70px;
+                  opacity: 0.6;
+
+                  &:hover {
+                    opacity: 1;
+                  }
+
+                  &[href*="interior-shop/iguaneye"] {
+                    background-image: url("/assets/img/works/interior-shop/iguaneye/1.jpg");
+                  }
+
+                  &[href*="interior-medical/e"] {
+                    background-image: url("/assets/img/works/interior-medical/e/1.jpg");
+                  }
+
+                  &[href*="interior-restaurant/al-che-cciano-con-cert"] {
+                    background-image: url("/assets/img/works/interior-restaurant/al-che-cciano-con-cert/1.jpg");
+                  }
+
+                  &[href*="interior-restaurant/senshu"] {
+                    background-image: url("/assets/img/works/interior-restaurant/senshu/1.jpg");
+                  }
+
+                  &[href*="architecture-house/murakami-ex"] {
+                    background-image: url("/assets/img/works/architecture-house/murakami-ex/1.jpg");
+                  }
+
+                  &[href*="interior-medical/hasegawa"] {
+                    background-image: url("/assets/img/works/interior-medical/hasegawa/1.jpg");
+                  }
+
+                  &[href*="interior-medical/ito"] {
+                    background-image: url("/assets/img/works/interior-medical/ito/1.jpg");
+                  }
+
+                  &[href*="interior-shop/0035gather"] {
+                    background-image: url("/assets/img/works/interior-shop/0035gather/1.jpg");
+                  }
+
+                  &[href*="interior-gallery/eyes"] {
+                    background-image: url("/assets/img/works/interior-gallery/eyes/1.jpg");
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        & > ul {
+          li {
+            text-align: center;
+          }
+        }
+
+        & > ul.contact {
+          margin: 100px auto 0;
+        }
+
+        & > ul.pages {
+          display: flex;
+          justify-content: center;
+          margin: 40px auto 100px;
+
+          li {
+            margin: 0 30px;
+
+            a {
+              &:hover {
+                @apply link-accent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      margin-top: 200px;
+    }
+  }
+
+  body#works {
+    div.container {
+      main {
+        article {
+          h2 {
+            span {
+              color: var(--color-link-hover);
+            }
+          }
+
+          & > nav {
+            margin-bottom: 60px;
+            width: 700px;
+
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+
+              li {
+                width: 51px;
+                height: 51px;
+                margin-right: 8px;
+                margin-bottom: 8px;
+
+                a {
+                  @apply block-anchor;
+                  width: 51px;
+                  padding-top: 51px;
+                  background-color: #000;
+                }
+              }
+            }
+          }
+
+          section#work {
+            h3 {
+              font-size: var(--size-xl);
+              margin: 0 0 20px;
+              color: var(--color-header-h1-hover);
+
+              div.j {
+                font-size: var(--size-md);
+                font-weight: 200;
+              }
+            }
+
+            div {
+              overflow: hidden;
+
+              ul {
+                li {
+                  text-align: center;
+                  margin-bottom: 3px;
+
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body#about {
+    article {
+      section#content {
+        font-size: var(--size-sm);
+
+        h2 {
+          margin: 0 auto 30px;
+        }
+
+        h3,
+        h4 {
+          margin: 60px auto 30px;
+        }
+
+        h3 {
+          font-weight: 700;
+        }
+
+        h4 {
+          font-size: var(--size-xl);
+        }
+
+        ul {
+          width: 100%;
+          margin-bottom: 60px;
+          padding: 0;
+
+          li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            list-style: none;
+          }
+        }
+
+        nav#lang {
+          text-align: right;
+
+          a {
+            &.active {
+              font-weight: 700;
+              text-decoration: underline;
+            }
+          }
+
+          span {
+            margin: 0 0.3em;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    body {
+      nav.navbar {
+        display: flex;
+      }
+
+      div.container {
+        header {
+          margin: 40px auto;
+        }
+
+        main {
+          nav#global {
+            display: none;
+          }
+        }
+
+        footer {
+          div {
+            nav {
+              ul {
+                justify-content: space-between;
+                width: 80%;
+                margin: 10px auto 30px;
+
+                li {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    body#index {
+      div.container {
+        main {
+          article {
+            section#worklist {
+              ul {
+                flex-wrap: wrap;
+
+                li {
+                  width: 120px;
+                  margin-bottom: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    body#works {
+      div.container {
+        main {
+          article {
+            & > nav {
+              width: 100%;
+            }
+
+            section#work {
+              width: 100%;
+
+              div {
+                ul {
+                  flex-direction: column;
+
+                  li {
+                    flex: 0 0 0;
+                    margin-bottom: 3px;
+
+                    a {
+                      img {
+                        width: 100%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    body {
+      div.container {
+        header {
+          h1 {
+            a {
+              span {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    body#index {
+      div.container {
+        main {
+          article {
+            section#worklist {
+              ul {
+                flex-direction: column;
+
+                li {
+                  width: 100%;
+                  margin-bottom: 10px;
+
+                  a {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          & > ul.pages {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    body#index {
+      div.container {
+        main {
+          article {
+            section#worklist {
+              ul {
+                li {
+                  &:last-child {
+                    margin: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    body#works {
+      div.container {
+        main {
+          article {
+            & > nav {
+              ul {
+                li {
+                  &:nth-child(12n) {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 } */
