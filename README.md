@@ -10,10 +10,10 @@ npm i && npm run dev
 
 ## Assets
 
-`public/assets` is ignored.
+`public/img` is ignored.
 
 ```shell
-ln -s /path/to/assets public/assets
+ln -s /path/to/assets/img public/img
 ```
 
 ## Deployment
