@@ -17,13 +17,13 @@ export const Top = () => {
     <div id="top">
       <SingleColumnContainer>
         <section>
-          <div><img src="/assets/img/header.jpg" alt="iGUANEYE Aoyama" /></div>
+          <div><img src="/img/header.jpg" alt="iGUANEYE Aoyama" /></div>
           <ul>
             {works.map(work => {
               return (
                 <li key={work.path}>
                   <a href={`/works/${work.path}`}>
-                    <img src={`/assets/img/works/${work.path}/1.jpg`} alt={work.title} />
+                    <img src={`/img/works/${work.path}/1.jpg`} alt={work.title} />
                   </a>
                 </li>
               )

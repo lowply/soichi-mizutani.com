@@ -29,7 +29,7 @@ export const Works = ({ categoryName, workName }: WorksProps) => {
                       href={`/works/${categoryName}/${key}/`}
                       data-title={category.works[key].title_en}
                     >
-                      <img src={`/assets/img/works/${categoryName}/${key}/1.jpg`} alt={category.works[key].title_en} />
+                      <img src={`/img/works/${categoryName}/${key}/1.jpg`} alt={category.works[key].title_en} />
                     </a>
                   </li>
                 ))}
@@ -44,7 +44,7 @@ export const Works = ({ categoryName, workName }: WorksProps) => {
               <div>
                 <ul>
                   {[...Array(photos)].map((_, i) => (
-                    <li><img src={`/assets/img/works/${categoryName}/${workName}/${i + 1}.jpg`} /></li>
+                    <li><img src={`/img/works/${categoryName}/${workName}/${i + 1}.jpg`} /></li>
                   ))}
                 </ul>
               </div>
