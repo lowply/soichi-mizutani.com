@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* ================= */
+/* Global */
+/* ================= */
+body {
+  @apply text-neutral-800;
+  a {
+    @apply transition-all duration-200;
+    &:hover {
+      @apply text-neutral-400;
+    }
+  }
+  div#container {
+    @apply w-6xl mx-auto flex flex-col gap-40;
+    > header {
+      h1 {
+        @apply text-xl text-neutral-500 tracking-wide;
+        a {
+          span {
+            @apply font-semibold;
+          }
+        }
+      }
+    }
+    main {
+      > section {
+        h2 {
+          @apply text-2xl font-medium text-neutral-400;
+        }
+        h3 {
+          @apply text-2xl font-semibold;
+        }
+        h4 {
+          @apply text-xl font-semibold mt-12 mb-6;
+        }
+      }
+    }
+    > footer {
+      > div {
+        @apply flex justify-between pt-2 pb-4 border-t border-neutral-200 text-sm text-neutral-400;
+        a {
+          &:hover {
+            @apply text-neutral-800;
+          }
+        }
+      }
+    }
+    /* ================= */
+    /* Columns */
+    /* ================= */
+    &.single-column {
+      @apply text-center;
+      > main {
+        @apply flex-col gap-24;
+      }
+    }
+    &.two-columns {
+      > main {
+        @apply flex flex-row gap-36;
+        > nav {
+          @apply w-[15%] leading-6;
+          h5 {
+            @apply font-bold mb-3;
+          }
+          ul {
+            @apply mb-6 text-neutral-400;
+            li {
+              @apply mb-1;
+              a {
+                @apply duration-0;
+                &:hover, &.active {
+                  @apply text-neutral-900;
+                }
+              }
+              &.disabled {
+                @apply text-neutral-300;
+              }
+            }
+          }
+        }
+        > section {
+          @apply w-[85%];
+        }
+      }
+    }
+  }
+  /* ================= */
+  /* Individual pages */
+  /* ================= */
+  div#top {
+    > div#container {
+      > main {
+        > section {
+          > div {
+            @apply mb-12;
+          }
+          > ul {
+            @apply flex justify-between;
+            > li {
+              @apply w-[70px] h-[70px] bg-black;
+              > a {
+                @apply opacity-60;
+                &:hover {
+                  @apply opacity-100;
+                }
+                > img {
+                  @apply w-full h-full object-cover;
+                }
+              }
+            }
+          }
+        }
+        > ul {
+          @apply mt-24;
+        }
+      }
+    }
+  }
+  div#about,
+  div#company {
+    > div#container {
+      main {
+        section {
+          nav#lang {
+            @apply text-right text-sm text-neutral-600;
+            span {
+              @apply mx-1;
+            }
+          }
+          div {
+            div {
+              > h3 {
+                @apply my-24;
+              }
+              table {
+                @apply w-full text-left text-sm;
+                th,
+                td {
+                  @apply align-top px-1 py-3 border-t border-t-stone-200;
+                }
+                th {
+                  @apply w-[20%];
+                }
+                td {
+                  ul {
+                    @apply flex flex-col gap-2;
+                  }
+                  dl {
+                    @apply mb-4;
+                    dt {
+                      @apply font-bold;
+                    }
+                  }
+                  div {
+                    @apply mt-4;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  div#works {
+    > div#container {
+      > main {
+        > section {
+          > h2 {
+            @apply mb-6;
+          }
+          > article {
+            > nav {
+              @apply w-[700px];
+              > ul {
+                @apply flex flex-wrap gap-2;
+                > li {
+                  @apply w-[50px] h-[50px] bg-black;
+                  > a {
+                    > img {
+                      @apply w-full h-full object-cover;
+                    }
+                  }
+                }
+              }
+            }
+            > section {
+              h3 {
+                @apply text-xl text-neutral-500 mt-18 mb-6;
+                & .j {
+                  @apply text-sm font-light;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

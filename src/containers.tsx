@@ -9,13 +9,16 @@ const CompanyHeading = () => (
 )
 
 const Footer = () => (
-  <small>Copyright &copy; 2025 Soichi Mizutani Design Office Co,.Ltd. All Rights Reserved.</small>
+  <div>
+    <div><a href="/about">About</a> | <a href="/company">Company</a></div>
+    <small>Copyright &copy; {new Date().getFullYear()} Soichi Mizutani Design Office Co,.Ltd. All Rights Reserved.</small>
+  </div>
 )
 
 const SideManu = () => (
   <nav>
     <h5>Interior Design</h5>
-    <ul class="list-unstyled interior">
+    <ul>
       <li><a href="/works/interior-shop/">Shop</a></li>
       <li><a href="/works/interior-restaurant/">Restaurant</a></li>
       <li><a href="/works/interior-bar/">Bar</a></li>
@@ -25,16 +28,16 @@ const SideManu = () => (
       <li><a href="/works/interior-hotel/">Hotel</a></li>
     </ul>
     <h5>Architecture</h5>
-    <ul class="list-unstyled architecture">
+    <ul>
       <li><a href="/works/architecture-house/">House</a></li>
     </ul>
     <h5>Exhibition</h5>
-    <ul class="list-unstyled exhibition">
+    <ul>
       <li><a href="/works/exhibition/void/">Void &gt; 0<sup>4</sup> / 1998</a></li>
       <li><a href="/works/exhibition/pole/">一本の棒 / 2011</a></li>
     </ul>
     <h5>Other Works</h5>
-    <ul class="list-unstyled other">
+    <ul>
       <li><a href="/works/other-complex/">Complex</a></li>
       <li class="disabled">Graphic</li>
       <li class="disabled">Fixture</li>

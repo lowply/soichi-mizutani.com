@@ -1,6 +1,6 @@
 import { SingleColumnContainer } from './containers'
 
-export const Index = () => {
+export const Top = () => {
   const works = [
     { title: 'iGUANEYE', path: 'interior-shop/iguaneye' },
     { title: 'E.Dental&Ortho', path: 'interior-medical/e' },
@@ -14,7 +14,7 @@ export const Index = () => {
   ]
 
   return (
-    <div id="index">
+    <div id="top">
       <SingleColumnContainer>
         <section>
           <div><img src="/assets/img/header.jpg" alt="iGUANEYE Aoyama" /></div>
