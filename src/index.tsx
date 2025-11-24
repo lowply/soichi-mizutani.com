@@ -26,7 +26,7 @@ const renderer = jsxRenderer(({ children }, c) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Link href="/src/css/main.css" rel="stylesheet" />
         <link href="/favicon.png" rel="icon" sizes="32x32" type="image/png" />
-        <Script type="module" src="/src/js/client.js" />
+        <Script type="module" src="/src/js/main.js" />
       </head>
       <body>{children}</body>
     </html>

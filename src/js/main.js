@@ -3,21 +3,22 @@
     return window.location.pathname.startsWith(page)
   }
 
-  const navLinks = document.querySelectorAll('div#works div#container main > nav ul li a');
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href')
-    if (window.location.pathname.includes(href)) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  })
+  const navLinks = document.querySelectorAll('div#container main > nav ul li a');
+  if (navLinks.length != 0) {
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href')
+      if (window.location.pathname.includes(href)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    })
+  }
 
   if (on('/works/')) {
-    const workLinks = document.querySelectorAll('div#works div#container main section article nav ul li a');
-    const workDisplay = document.querySelector('div#works div#container main section h2 span');
+    const workLinks = document.querySelectorAll('div#container main section article nav ul li a');
+    const workDisplay = document.querySelector('div#container main section h2 span');
     if (workLinks && workDisplay) {
-      console.log(workDisplay)
       workLinks.forEach(link => {
         link.addEventListener('mouseenter', () => {
           const title = link.dataset.title;
@@ -33,7 +34,7 @@
   }
 
   if (on('/about/') || on('/company/')) {
-    const STORAGE_KEY = 'about-language'
+    const STORAGE_KEY = 'language'
     const DEFAULT_LANG = 'ja'
 
     const root = document.querySelector('[data-lang-root]')
