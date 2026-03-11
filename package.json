@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
-    "hono": "^4.10.4",
+    "hono": "^4.12.7",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
