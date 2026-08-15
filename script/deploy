@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+
+find . -name .DS_Store -delete -print
+
+vite build
+wrangler deploy
