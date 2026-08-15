@@ -3,13 +3,13 @@ import { SingleColumnContainer } from './containers'
 export const Top = () => {
   const works = [
     { title: 'iGUANEYE', path: 'interior-shop/iguaneye' },
+    { title: 'Waseda no Mori Skin Clinic', path: 'interior-medical/waseda' },
     { title: 'E.Dental&Ortho', path: 'interior-medical/e' },
     { title: 'Al-che-cciano con cert', path: 'interior-restaurant/al-che-cciano-con-cert' },
     { title: 'Senshu Jakarta', path: 'interior-restaurant/senshu' },
     { title: 'Murakami House', path: 'architecture-house/murakami-ex' },
     { title: 'Hasegawa Dental Office Fujinomiya', path: 'interior-medical/hasegawa' },
     { title: 'Ito Dental Clinic Odawara', path: 'interior-medical/ito' },
-    { title: '0035 gather Yamagata', path: 'interior-shop/0035gather' },
     { title: 'Showroom EYES', path: 'interior-gallery/eyes' },
   ]
 

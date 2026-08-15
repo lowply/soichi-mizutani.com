@@ -155,6 +155,11 @@ export const Data: Record<string, Category> = {
   'interior-medical': {
     title: 'Interior Design / Medical',
     works: {
+      'waseda': {
+        title_en: 'Waseda no Mori Skin Clinic',
+        title_ja: 'ワセダの杜スキンクリニック',
+        photos: 14
+      },
       'hasegawa': {
         title_en: 'Hasegawa Dental Office Fujinomiya',
         title_ja: 'はせがわ歯科医院 富士宮',
