@@ -5,7 +5,7 @@ import { appendTrailingSlash } from 'hono/trailing-slash'
 
 import { Top } from './top'
 import { About } from './about'
-import { Company } from './company'
+import { Contact } from './contact'
 import { Works } from './works'
 import { Data } from './data'
 
@@ -50,10 +50,10 @@ app.get('/about/', (c) => {
   )
 })
 
-app.get('/company/', (c) => {
-  c.set('title', "Company")
+app.get('/contact/', (c) => {
+  c.set('title', "Contact")
   return c.render(
-    <Company />
+    <Contact />
   )
 })
 

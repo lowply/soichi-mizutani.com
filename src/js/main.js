@@ -33,7 +33,7 @@
     }
   }
 
-  if (on('/about/') || on('/company/')) {
+  if (on('/about/') || on('/contact/')) {
     const STORAGE_KEY = 'language'
     const DEFAULT_LANG = 'ja'
 

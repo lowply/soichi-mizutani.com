@@ -1,16 +1,22 @@
 import type { FC } from 'hono/jsx'
 
 const CompanyHeading = () => (
+  <>
   <h1>
     <a href="/" title="Soichi Mizutani Design Office Co., Ltd.">
       <span>Soichi Mizutani</span> Design Office Co., Ltd.
     </a>
   </h1>
+  <ul>
+    <li><a href="/works/interior-shop/">Works</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  </>
 )
 
 const Footer = () => (
   <div>
-    <div><a href="/about">About</a> | <a href="/company">Company</a></div>
     <small>Copyright &copy; {new Date().getFullYear()} Soichi Mizutani Design Office Co,.Ltd. All Rights Reserved.</small>
   </div>
 )

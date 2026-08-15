@@ -3,6 +3,18 @@ import { LanguageSelector } from './language-selector'
 
 const CompanyJa = () => (
   <div id="ja">
+    <h3>連絡先</h3>
+    <table class="table">
+      <tr>
+        <th>電話</th>
+        <td>090-3435-3679</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><a href="mailto:soichi@soichi-mizutani.com" title="Soichi Mizutani">soichi@soichi-mizutani.com</a></td>
+      </tr>
+    </table>
+
     <h3>会社概要</h3>
     <table class="table">
       <tr>
@@ -16,15 +28,6 @@ const CompanyJa = () => (
       <tr>
         <th>所在地</th>
         <td>〒150-0031<br />東京都渋谷区桜丘町16-13 桜丘フロントIIビル 3F MIDORI.so SHIBUYA<br /><a href="https://goo.gl/maps/HHcSAjJ9WwQ2" target="_blank" title="">Google Maps</a></td>
-      </tr>
-      <tr>
-        <th>連絡先</th>
-        <td>
-          <ul>
-            <li>TEL : 090-3435-3679</li>
-            <li>Email : <a href="mailto:soichi@soichi-mizutani.com" title="Soichi Mizutani">soichi@soichi-mizutani.com</a></li>
-          </ul>
-        </td>
       </tr>
       <tr>
         <th>資本金</th>
@@ -91,6 +94,17 @@ const CompanyJa = () => (
 
 const CompanyEn = () => (
   <div id="en">
+    <h3>Contact Information</h3>
+    <table class="table">
+      <tr>
+        <th>Tel</th>
+        <td>090-3435-3679</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><a href="mailto:soichi@soichi-mizutani.com" title="Soichi Mizutani">soichi@soichi-mizutani.com</a></td>
+      </tr>
+    </table>
     <h3>Company Information</h3>
     <table>
       <tr>
@@ -104,15 +118,6 @@ const CompanyEn = () => (
       <tr>
         <th>Address</th>
         <td>MIDORI.so SHIBUYA, Sakuragaoka Front Building II 3F<br />16-13, Sakuragaoka, Shibuya-ku, Tokyo, Japan, 150-0031<br /><a href="https://goo.gl/maps/HHcSAjJ9WwQ2" target="_blank" title="">Google Maps</a></td>
-      </tr>
-      <tr>
-        <th>Contact</th>
-        <td>
-          <ul>
-            <li>TEL : 090-3435-3679</li>
-            <li>Email : <a href="mailto:soichi@soichi-mizutani.com" title="Soichi Mizutani">soichi@soichi-mizutani.com</a></li>
-          </ul>
-        </td>
       </tr>
       <tr>
         <th>Capital</th>
@@ -173,11 +178,11 @@ const CompanyEn = () => (
   </div>
 )
 
-export const Company = () => (
-  <div id="company">
+export const Contact = () => (
+  <div id="contact">
     <TwoColumnsContainer>
       <section data-lang-root data-active-lang="ja">
-        <h2>Company</h2>
+        <h2>Contact</h2>
         <LanguageSelector />
         <div data-lang-panel="ja">
           <CompanyJa />

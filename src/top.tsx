@@ -30,11 +30,11 @@ export const Top = () => {
             })}
           </ul>
         </section>
-        <ul>
+        {/* <ul>
           <li><a href="https://goo.gl/maps/MTqyYU2fsq62">MIDORI.so SHIBUYA, Sakuragaoka Front Building II 3F, 16-13, Sakuragaoka, Shibuya-ku, Tokyo</a></li>
           <li>090-3435-3679</li>
           <li><a href="mailto:soichi@soichi-mizutani.com" title="Soichi Mizutani">soichi@soichi-mizutani.com</a></li>
-        </ul>
+        </ul> */}
       </SingleColumnContainer>
     </div >
   )
